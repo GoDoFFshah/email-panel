@@ -1,0 +1,8 @@
+INFO 2026-06-22 02:37:07,661 tasks 4612 13272 Campaign e1bf38dc-d74e-488a-9738-ca487fcaeb6d: Sent 3/3
+INFO 2026-06-22 02:37:09,759 tasks 4612 13272 Campaign e1bf38dc-d74e-488a-9738-ca487fcaeb6d completed: 3 success, 0 failed
+ERROR 2026-06-22 02:57:30,666 views 2636 6072 Error sending campaign with Celery: 
+Retry limit exceeded while trying to reconnect to the Celery result store
+backend. The Celery application must be restarted.
+
+INFO 2026-06-22 02:57:36,203 tasks 2636 6072 Campaign b5f814d4-6595-476b-b787-90440d5efafd: Sent 1/1
+INFO 2026-06-22 02:57:38,325 tasks 2636 6072 Campaign b5f814d4-6595-476b-b787-90440d5efafd completed: 1 success, 0 failed

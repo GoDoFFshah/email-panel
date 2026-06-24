@@ -1,0 +1,2084 @@
+INFO 2026-06-20 13:32:54,124 autoreload 12240 9476 Watching for file changes with StatReloader
+ERROR 2026-06-20 13:33:05,322 log 12240 12820 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\client\default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\send\email_panel_project\backend\apps\core\middleware.py", line 70, in __call__
+    if self.is_ip_blocked(ip):
+       ~~~~~~~~~~~~~~~~~~^^^^
+  File "D:\send\email_panel_project\backend\apps\core\middleware.py", line 100, in is_ip_blocked
+    blocked_ips = cache.get('blocked_ips', [])
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\client\default.py", line 298, in get
+    value = client.get(key)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\commands\core.py", line 3194, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\client.py", line 787, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\client.py", line 793, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\utils.py", line 258, in wrapper
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 3139, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1006, in connect
+    self.retry.call_with_retry(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.connect_check_health(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        lambda error: self.disconnect(error),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1007, in <lambda>
+    lambda: self.connect_check_health(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        check_health=True, retry_socket_connect=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1055, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+ERROR 2026-06-20 13:33:05,330 runserver 12240 6452 [35;1mHTTP GET / 500 [4.18, 127.0.0.1:63061][0m
+ERROR 2026-06-20 13:33:09,569 log 12240 3384 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\client\default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\send\email_panel_project\backend\apps\core\middleware.py", line 70, in __call__
+    if self.is_ip_blocked(ip):
+       ~~~~~~~~~~~~~~~~~~^^^^
+  File "D:\send\email_panel_project\backend\apps\core\middleware.py", line 100, in is_ip_blocked
+    blocked_ips = cache.get('blocked_ips', [])
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\client\default.py", line 298, in get
+    value = client.get(key)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\commands\core.py", line 3194, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\client.py", line 787, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\client.py", line 793, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\utils.py", line 258, in wrapper
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 3139, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1006, in connect
+    self.retry.call_with_retry(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.connect_check_health(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        lambda error: self.disconnect(error),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1007, in <lambda>
+    lambda: self.connect_check_health(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        check_health=True, retry_socket_connect=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1055, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+ERROR 2026-06-20 13:33:09,572 runserver 12240 6452 [35;1mHTTP GET /favicon.ico 500 [4.13, 127.0.0.1:63061][0m
+ERROR 2026-06-20 13:33:26,049 log 12240 1820 Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\client\default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\send\email_panel_project\backend\apps\core\middleware.py", line 70, in __call__
+    if self.is_ip_blocked(ip):
+       ~~~~~~~~~~~~~~~~~~^^^^
+  File "D:\send\email_panel_project\backend\apps\core\middleware.py", line 100, in is_ip_blocked
+    blocked_ips = cache.get('blocked_ips', [])
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\client\default.py", line 298, in get
+    value = client.get(key)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\commands\core.py", line 3194, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\client.py", line 787, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\client.py", line 793, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\utils.py", line 258, in wrapper
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 3139, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1006, in connect
+    self.retry.call_with_retry(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.connect_check_health(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        lambda error: self.disconnect(error),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1007, in <lambda>
+    lambda: self.connect_check_health(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        check_health=True, retry_socket_connect=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1055, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+ERROR 2026-06-20 13:33:26,053 runserver 12240 6452 [35;1mHTTP GET /admin/ 500 [4.13, 127.0.0.1:51568][0m
+ERROR 2026-06-20 13:33:30,310 log 12240 7712 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\client\default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\send\email_panel_project\backend\apps\core\middleware.py", line 70, in __call__
+    if self.is_ip_blocked(ip):
+       ~~~~~~~~~~~~~~~~~~^^^^
+  File "D:\send\email_panel_project\backend\apps\core\middleware.py", line 100, in is_ip_blocked
+    blocked_ips = cache.get('blocked_ips', [])
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django_redis\client\default.py", line 298, in get
+    value = client.get(key)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\commands\core.py", line 3194, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\client.py", line 787, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\client.py", line 793, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\utils.py", line 258, in wrapper
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 3139, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1006, in connect
+    self.retry.call_with_retry(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda: self.connect_check_health(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        lambda error: self.disconnect(error),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1007, in <lambda>
+    lambda: self.connect_check_health(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        check_health=True, retry_socket_connect=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\redis\connection.py", line 1055, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+ERROR 2026-06-20 13:33:30,313 runserver 12240 6452 [35;1mHTTP GET /favicon.ico 500 [4.13, 127.0.0.1:51568][0m
+INFO 2026-06-20 13:36:02,182 autoreload 12576 5064 Watching for file changes with StatReloader
+INFO 2026-06-20 13:36:26,760 runserver 12576 7928 [32mHTTP GET /admin/ 302 [0.03, 127.0.0.1:60641][0m
+INFO 2026-06-20 13:36:26,795 runserver 12576 7928 [mHTTP GET /admin/login/?next=/admin/ 200 [0.03, 127.0.0.1:60641][0m
+INFO 2026-06-20 13:36:26,908 runserver 12576 7928 [mHTTP GET /static/admin/css/dark_mode.css 200 [0.08, 127.0.0.1:55427][0m
+INFO 2026-06-20 13:36:26,908 runserver 12576 7928 [mHTTP GET /static/admin/css/base.css 200 [0.09, 127.0.0.1:60641][0m
+INFO 2026-06-20 13:36:26,912 runserver 12576 7928 [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.00, 127.0.0.1:55427][0m
+INFO 2026-06-20 13:36:26,913 runserver 12576 7928 [mHTTP GET /static/admin/css/login.css 200 [0.00, 127.0.0.1:60641][0m
+INFO 2026-06-20 13:36:26,916 runserver 12576 7928 [mHTTP GET /static/admin/css/responsive.css 200 [0.00, 127.0.0.1:55427][0m
+INFO 2026-06-20 13:36:26,919 runserver 12576 7928 [mHTTP GET /static/admin/js/theme.js 200 [0.00, 127.0.0.1:60641][0m
+INFO 2026-06-20 13:36:26,921 runserver 12576 7928 [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:55427][0m
+WARNING 2026-06-20 13:36:26,976 log 12576 2884 Not Found: /favicon.ico
+WARNING 2026-06-20 13:36:26,977 runserver 12576 7928 [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:55427][0m
+INFO 2026-06-20 13:36:44,410 runserver 12576 7928 [32mHTTP POST /admin/login/?next=/admin/ 302 [0.86, 127.0.0.1:55427][0m
+INFO 2026-06-20 13:36:44,506 runserver 12576 7928 [mHTTP GET /admin/ 200 [0.09, 127.0.0.1:55427][0m
+INFO 2026-06-20 13:36:44,535 runserver 12576 7928 [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.00, 127.0.0.1:60641][0m
+INFO 2026-06-20 13:36:44,537 runserver 12576 7928 [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.01, 127.0.0.1:56520][0m
+INFO 2026-06-20 13:36:44,537 runserver 12576 7928 [mHTTP GET /static/admin/css/dashboard.css 200 [0.01, 127.0.0.1:55427][0m
+WARNING 2026-06-20 13:36:57,855 log 12576 2884 Not Found: /api/
+WARNING 2026-06-20 13:36:57,856 runserver 12576 7928 [33mHTTP GET /api/ 404 [0.18, 127.0.0.1:56520][0m
+WARNING 2026-06-20 13:54:26,187 log 12576 2080 Not Found: /
+WARNING 2026-06-20 13:54:26,188 runserver 12576 7928 [33mHTTP GET / 404 [0.08, 127.0.0.1:54289][0m
+INFO 2026-06-20 13:54:33,338 runserver 12576 7928 [mHTTP GET /admin/ 200 [0.07, 127.0.0.1:54289][0m
+INFO 2026-06-20 13:54:33,353 runserver 12576 7928 [36mHTTP GET /static/admin/css/base.css 304 [0.00, 127.0.0.1:54289][0m
+INFO 2026-06-20 13:54:33,360 runserver 12576 7928 [36mHTTP GET /static/admin/css/dark_mode.css 304 [0.00, 127.0.0.1:54289][0m
+INFO 2026-06-20 13:54:33,360 runserver 12576 7928 [36mHTTP GET /static/admin/css/dashboard.css 304 [0.00, 127.0.0.1:55174][0m
+INFO 2026-06-20 13:54:33,361 runserver 12576 7928 [36mHTTP GET /static/admin/css/nav_sidebar.css 304 [0.00, 127.0.0.1:56294][0m
+INFO 2026-06-20 13:54:33,366 runserver 12576 7928 [36mHTTP GET /static/admin/css/responsive.css 304 [0.00, 127.0.0.1:55174][0m
+INFO 2026-06-20 13:54:33,368 runserver 12576 7928 [36mHTTP GET /static/admin/js/nav_sidebar.js 304 [0.00, 127.0.0.1:56294][0m
+INFO 2026-06-20 13:54:33,368 runserver 12576 7928 [36mHTTP GET /static/admin/js/theme.js 304 [0.00, 127.0.0.1:54289][0m
+INFO 2026-06-20 13:54:33,374 runserver 12576 7928 [36mHTTP GET /static/admin/img/icon-addlink.svg 304 [0.00, 127.0.0.1:56294][0m
+INFO 2026-06-20 13:54:33,375 runserver 12576 7928 [36mHTTP GET /static/admin/img/icon-changelink.svg 304 [0.00, 127.0.0.1:54289][0m
+INFO 2026-06-20 14:02:08,949 autoreload 13264 5748 Watching for file changes with StatReloader
+INFO 2026-06-20 14:38:46,345 runserver 13264 5868 [mHTTP OPTIONS /api/auth/login/ 200 [0.01, 127.0.0.1:60743][0m
+ERROR 2026-06-20 14:38:46,628 log 13264 4140 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\backend\apps\accounts\views.py", line 69, in post
+    user = authenticate(username=username, password=password)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\helpers.py", line 614, in inner
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2026-06-20 14:38:46,635 runserver 13264 5868 [35;1mHTTP POST /api/auth/login/ 500 [0.28, 127.0.0.1:60743][0m
+ERROR 2026-06-20 14:38:57,515 log 13264 4140 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\backend\apps\accounts\views.py", line 69, in post
+    user = authenticate(username=username, password=password)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\helpers.py", line 614, in inner
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2026-06-20 14:38:57,518 runserver 13264 5868 [35;1mHTTP POST /api/auth/login/ 500 [0.03, 127.0.0.1:60743][0m
+ERROR 2026-06-20 14:39:09,726 log 13264 4140 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\backend\apps\accounts\views.py", line 69, in post
+    user = authenticate(username=username, password=password)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\helpers.py", line 614, in inner
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2026-06-20 14:39:09,730 runserver 13264 5868 [35;1mHTTP POST /api/auth/login/ 500 [0.03, 127.0.0.1:60743][0m
+INFO 2026-06-20 14:40:25,306 autoreload 14088 14028 Watching for file changes with StatReloader
+ERROR 2026-06-20 14:40:40,903 log 14088 8512 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\backend\apps\accounts\views.py", line 69, in post
+    user = authenticate(username=username, password=password)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\helpers.py", line 614, in inner
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2026-06-20 14:40:40,907 runserver 14088 13552 [35;1mHTTP POST /api/auth/login/ 500 [0.05, 127.0.0.1:59304][0m
+ERROR 2026-06-20 14:41:08,287 log 14088 8512 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\backend\apps\accounts\views.py", line 69, in post
+    user = authenticate(username=username, password=password)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\helpers.py", line 614, in inner
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2026-06-20 14:41:08,290 runserver 14088 13552 [35;1mHTTP POST /api/auth/login/ 500 [0.03, 127.0.0.1:59304][0m
+ERROR 2026-06-20 14:43:41,484 log 14088 8512 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\backend\apps\accounts\views.py", line 69, in post
+    user = authenticate(username=username, password=password)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\helpers.py", line 614, in inner
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2026-06-20 14:43:41,487 runserver 14088 13552 [35;1mHTTP POST /api/auth/login/ 500 [0.04, 127.0.0.1:55165][0m
+ERROR 2026-06-20 14:45:05,225 log 14088 8512 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\backend\apps\accounts\views.py", line 69, in post
+    user = authenticate(username=username, password=password)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\helpers.py", line 614, in inner
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2026-06-20 14:45:05,228 runserver 14088 13552 [35;1mHTTP POST /api/auth/login/ 500 [0.04, 127.0.0.1:52526][0m
+WARNING 2026-06-20 14:45:32,916 log 14088 8512 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-20 14:45:32,918 runserver 14088 13552 [31;1mHTTP GET /api/auth/login/ 405 [0.03, 127.0.0.1:64735][0m
+WARNING 2026-06-20 14:45:32,998 log 14088 8512 Not Found: /favicon.ico
+WARNING 2026-06-20 14:45:32,999 runserver 14088 13552 [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:64735][0m
+ERROR 2026-06-20 14:45:56,313 log 14088 8512 Internal Server Error: /api/auth/login/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\backend\apps\accounts\views.py", line 69, in post
+    user = authenticate(username=username, password=password)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\helpers.py", line 614, in inner
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2026-06-20 14:45:56,316 runserver 14088 13552 [35;1mHTTP POST /api/auth/login/ 500 [0.02, 127.0.0.1:64829][0m
+INFO 2026-06-20 14:47:53,124 autoreload 14088 14028 D:\send\email_panel_project\backend\apps\accounts\views.py changed, reloading.
+INFO 2026-06-20 14:47:54,253 autoreload 11436 13568 Watching for file changes with StatReloader
+INFO 2026-06-20 14:48:05,644 autoreload 11740 12976 Watching for file changes with StatReloader
+INFO 2026-06-20 14:48:24,778 runserver 11740 11836 [mHTTP POST /api/auth/login/ 200 [0.84, 127.0.0.1:64952][0m
+INFO 2026-06-20 14:48:57,007 runserver 11740 11836 [mHTTP POST /api/auth/login/ 200 [0.78, 127.0.0.1:56567][0m
+INFO 2026-06-20 14:49:01,598 runserver 11740 11836 [32mHTTP GET /api/dashboard/stats 301 [0.01, 127.0.0.1:64470][0m
+INFO 2026-06-20 14:58:03,104 autoreload 3080 11308 Watching for file changes with StatReloader
+INFO 2026-06-20 14:59:22,856 runserver 3080 11740 [mHTTP OPTIONS /api/auth/profile/ 200 [0.00, 127.0.0.1:49367][0m
+INFO 2026-06-20 14:59:22,856 runserver 3080 11740 [mHTTP OPTIONS /api/auth/profile/ 200 [0.00, 127.0.0.1:53129][0m
+INFO 2026-06-20 14:59:23,107 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.25, 127.0.0.1:53129][0m
+INFO 2026-06-20 14:59:23,587 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.48, 127.0.0.1:53129][0m
+INFO 2026-06-20 14:59:31,573 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.25, 127.0.0.1:53129][0m
+INFO 2026-06-20 14:59:31,787 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:53129][0m
+INFO 2026-06-20 15:04:01,975 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:50780][0m
+INFO 2026-06-20 15:04:02,153 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:50780][0m
+INFO 2026-06-20 15:04:48,090 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:50780][0m
+INFO 2026-06-20 15:04:48,278 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:50780][0m
+INFO 2026-06-20 15:04:52,106 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.14, 127.0.0.1:50780][0m
+INFO 2026-06-20 15:04:52,279 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.17, 127.0.0.1:50780][0m
+INFO 2026-06-20 15:05:14,395 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:50780][0m
+INFO 2026-06-20 15:05:14,609 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:50780][0m
+INFO 2026-06-20 15:06:59,059 runserver 3080 11740 [32mHTTP GET /api/senders 301 [0.02, 127.0.0.1:51373][0m
+INFO 2026-06-20 15:06:59,520 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:56959][0m
+INFO 2026-06-20 15:06:59,728 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:56959][0m
+INFO 2026-06-20 15:07:03,478 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:56959][0m
+INFO 2026-06-20 15:07:03,679 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:56959][0m
+INFO 2026-06-20 15:07:06,688 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:56959][0m
+INFO 2026-06-20 15:07:06,921 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.23, 127.0.0.1:56959][0m
+INFO 2026-06-20 15:07:10,645 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:56959][0m
+INFO 2026-06-20 15:07:10,842 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:56959][0m
+INFO 2026-06-20 15:13:06,338 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [1.00, 127.0.0.1:49389][0m
+INFO 2026-06-20 15:13:06,582 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.24, 127.0.0.1:49389][0m
+WARNING 2026-06-20 15:13:06,587 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:13:06,588 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.23, 127.0.0.1:59811][0m
+WARNING 2026-06-20 15:13:06,605 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:13:06,605 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:59814][0m
+WARNING 2026-06-20 15:13:16,955 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:13:16,955 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:54615][0m
+WARNING 2026-06-20 15:13:16,970 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:13:16,971 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:54617][0m
+WARNING 2026-06-20 15:13:31,340 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:13:31,340 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:50362][0m
+WARNING 2026-06-20 15:13:31,356 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:13:31,356 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:50364][0m
+WARNING 2026-06-20 15:14:02,243 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:14:02,244 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:51884][0m
+INFO 2026-06-20 15:14:53,649 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.50, 127.0.0.1:61873][0m
+INFO 2026-06-20 15:14:53,832 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:61873][0m
+WARNING 2026-06-20 15:14:53,849 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:14:53,851 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.17, 127.0.0.1:58640][0m
+WARNING 2026-06-20 15:14:53,883 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:14:53,884 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.02, 127.0.0.1:58642][0m
+WARNING 2026-06-20 15:15:02,060 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:02,060 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:51011][0m
+WARNING 2026-06-20 15:15:02,076 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:02,077 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:51013][0m
+WARNING 2026-06-20 15:15:03,435 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:03,435 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:56429][0m
+WARNING 2026-06-20 15:15:03,450 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:03,450 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:52562][0m
+WARNING 2026-06-20 15:15:05,920 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:05,920 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:58404][0m
+WARNING 2026-06-20 15:15:05,934 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:05,935 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:52614][0m
+WARNING 2026-06-20 15:15:07,576 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:07,576 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:49306][0m
+WARNING 2026-06-20 15:15:07,594 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:07,595 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:49308][0m
+WARNING 2026-06-20 15:15:09,355 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:09,356 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:51894][0m
+WARNING 2026-06-20 15:15:09,371 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:09,371 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:51896][0m
+INFO 2026-06-20 15:15:10,792 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.17, 127.0.0.1:61873][0m
+INFO 2026-06-20 15:15:10,953 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.16, 127.0.0.1:61873][0m
+INFO 2026-06-20 15:15:13,992 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:61873][0m
+INFO 2026-06-20 15:15:14,175 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:61873][0m
+INFO 2026-06-20 15:15:16,698 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:61873][0m
+INFO 2026-06-20 15:15:16,920 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:61873][0m
+WARNING 2026-06-20 15:15:17,128 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:17,128 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.02, 127.0.0.1:58672][0m
+WARNING 2026-06-20 15:15:17,144 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:17,144 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:58674][0m
+WARNING 2026-06-20 15:15:20,271 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:20,272 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:58676][0m
+WARNING 2026-06-20 15:15:20,286 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:20,286 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:58678][0m
+WARNING 2026-06-20 15:15:21,576 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:21,577 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:58681][0m
+WARNING 2026-06-20 15:15:21,591 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:21,592 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:58683][0m
+WARNING 2026-06-20 15:15:23,120 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:23,121 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:55977][0m
+WARNING 2026-06-20 15:15:23,137 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:23,137 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:57087][0m
+WARNING 2026-06-20 15:15:31,280 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:31,281 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:61608][0m
+WARNING 2026-06-20 15:15:31,297 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:15:31,298 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:55050][0m
+WARNING 2026-06-20 15:16:02,225 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:16:02,225 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:59045][0m
+INFO 2026-06-20 15:18:21,180 runserver 3080 11740 [32mHTTP GET /api/emails/campaigns 301 [0.01, 127.0.0.1:55967][0m
+INFO 2026-06-20 15:18:21,635 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:59889][0m
+INFO 2026-06-20 15:18:21,808 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.17, 127.0.0.1:59889][0m
+WARNING 2026-06-20 15:18:21,815 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:21,815 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.16, 127.0.0.1:59891][0m
+WARNING 2026-06-20 15:18:21,830 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:21,830 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:64332][0m
+INFO 2026-06-20 15:18:23,705 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:59889][0m
+INFO 2026-06-20 15:18:23,918 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:59889][0m
+WARNING 2026-06-20 15:18:23,924 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:23,926 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.20, 127.0.0.1:60945][0m
+WARNING 2026-06-20 15:18:23,942 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:23,942 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:60947][0m
+WARNING 2026-06-20 15:18:28,244 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:28,245 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:60951][0m
+WARNING 2026-06-20 15:18:28,261 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:28,262 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:60953][0m
+WARNING 2026-06-20 15:18:32,936 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:32,936 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:51755][0m
+WARNING 2026-06-20 15:18:32,954 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:32,954 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:54142][0m
+WARNING 2026-06-20 15:18:40,385 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:40,386 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:62694][0m
+WARNING 2026-06-20 15:18:40,401 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:40,402 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:62696][0m
+WARNING 2026-06-20 15:18:44,480 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:44,481 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:49328][0m
+WARNING 2026-06-20 15:18:44,497 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:44,497 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:49330][0m
+WARNING 2026-06-20 15:18:48,446 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:48,448 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:61317][0m
+WARNING 2026-06-20 15:18:48,464 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:48,465 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:61319][0m
+WARNING 2026-06-20 15:18:51,173 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:51,174 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:54491][0m
+WARNING 2026-06-20 15:18:51,189 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:51,190 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:59964][0m
+WARNING 2026-06-20 15:18:55,420 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:55,421 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:52784][0m
+WARNING 2026-06-20 15:18:55,437 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:55,437 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:52786][0m
+WARNING 2026-06-20 15:18:58,078 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:58,079 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:55008][0m
+WARNING 2026-06-20 15:18:58,094 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:18:58,094 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:59456][0m
+WARNING 2026-06-20 15:19:28,232 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:19:28,232 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:51338][0m
+WARNING 2026-06-20 15:19:58,248 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:19:58,249 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:59247][0m
+WARNING 2026-06-20 15:21:28,845 log 3080 1304 Not Found: /api/notifications
+WARNING 2026-06-20 15:21:28,846 runserver 3080 11740 [33mHTTP GET /api/notifications 404 [0.01, 127.0.0.1:63871][0m
+INFO 2026-06-20 15:22:38,717 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:52222][0m
+INFO 2026-06-20 15:22:38,917 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:52222][0m
+INFO 2026-06-20 15:24:13,430 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:50822][0m
+INFO 2026-06-20 15:24:14,165 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.24, 127.0.0.1:64686][0m
+INFO 2026-06-20 15:24:14,337 runserver 3080 11740 [mHTTP GET /api/auth/profile/ 200 [0.17, 127.0.0.1:64686][0m
+INFO 2026-06-20 15:31:54,841 autoreload 7872 288 Watching for file changes with StatReloader
+WARNING 2026-06-20 15:32:22,631 log 7872 10004 Unauthorized: /api/auth/login/
+WARNING 2026-06-20 15:32:22,631 runserver 7872 13372 [31;1mHTTP POST /api/auth/login/ 401 [0.72, 127.0.0.1:54000][0m
+INFO 2026-06-20 15:32:27,905 runserver 7872 13372 [mHTTP POST /api/auth/login/ 200 [0.81, 127.0.0.1:54000][0m
+INFO 2026-06-20 15:32:29,560 runserver 7872 13372 [32mHTTP GET /api/notifications 301 [0.01, 127.0.0.1:52735][0m
+INFO 2026-06-20 15:36:30,750 runserver 7872 13372 [mHTTP GET /api/auth/profile/ 200 [0.31, 127.0.0.1:60826][0m
+INFO 2026-06-20 15:36:31,108 runserver 7872 13372 [mHTTP GET /api/auth/profile/ 200 [0.36, 127.0.0.1:60826][0m
+INFO 2026-06-20 15:36:34,885 runserver 7872 13372 [mHTTP GET /api/auth/profile/ 200 [0.27, 127.0.0.1:60826][0m
+INFO 2026-06-20 15:36:35,099 runserver 7872 13372 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:60826][0m
+INFO 2026-06-20 15:39:29,980 runserver 7872 13372 [mHTTP GET /api/auth/profile/ 200 [0.30, 127.0.0.1:54600][0m
+INFO 2026-06-20 15:39:30,184 runserver 7872 13372 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:54600][0m
+INFO 2026-06-21 00:40:10,356 autoreload 5464 5244 Watching for file changes with StatReloader
+INFO 2026-06-21 00:41:24,958 runserver 5464 14244 [mHTTP OPTIONS /api/auth/login/ 200 [0.01, 127.0.0.1:61598][0m
+WARNING 2026-06-21 00:41:25,594 log 5464 13912 Unauthorized: /api/auth/login/
+WARNING 2026-06-21 00:41:25,596 runserver 5464 14244 [31;1mHTTP POST /api/auth/login/ 401 [0.62, 127.0.0.1:61598][0m
+INFO 2026-06-21 00:41:39,309 runserver 5464 14244 [mHTTP POST /api/auth/login/ 200 [0.91, 127.0.0.1:61598][0m
+INFO 2026-06-21 00:43:18,039 runserver 5464 14244 [mHTTP OPTIONS /api/auth/profile/ 200 [0.00, 127.0.0.1:54912][0m
+INFO 2026-06-21 00:43:18,039 runserver 5464 14244 [mHTTP OPTIONS /api/auth/profile/ 200 [0.00, 127.0.0.1:61392][0m
+INFO 2026-06-21 00:43:18,247 runserver 5464 14244 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:61392][0m
+INFO 2026-06-21 00:43:18,457 runserver 5464 14244 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:61392][0m
+INFO 2026-06-21 00:43:28,711 runserver 5464 14244 [mHTTP GET /api/auth/profile/ 200 [0.28, 127.0.0.1:61392][0m
+INFO 2026-06-21 00:43:28,921 runserver 5464 14244 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:61392][0m
+INFO 2026-06-21 00:43:40,884 runserver 5464 14244 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:61392][0m
+INFO 2026-06-21 00:43:41,093 runserver 5464 14244 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:61392][0m
+INFO 2026-06-21 00:43:42,891 runserver 5464 14244 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:61392][0m
+INFO 2026-06-21 00:43:43,112 runserver 5464 14244 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:61392][0m
+INFO 2026-06-21 00:46:36,667 autoreload 7880 7364 Watching for file changes with StatReloader
+WARNING 2026-06-21 00:47:01,577 log 7880 12428 Unauthorized: /api/senders/
+WARNING 2026-06-21 00:47:01,577 runserver 7880 9040 [31;1mHTTP GET /api/senders/ 401 [0.03, 127.0.0.1:58988][0m
+WARNING 2026-06-21 00:47:01,727 log 7880 12428 Not Found: /favicon.ico
+WARNING 2026-06-21 00:47:01,728 runserver 7880 9040 [33mHTTP GET /favicon.ico 404 [0.10, 127.0.0.1:58988][0m
+INFO 2026-06-21 00:49:20,267 runserver 7880 9040 [mHTTP GET /api/auth/profile/ 200 [0.32, 127.0.0.1:63984][0m
+INFO 2026-06-21 00:49:20,453 runserver 7880 9040 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:63984][0m
+INFO 2026-06-21 00:49:39,309 runserver 7880 9040 [mHTTP POST /api/auth/login/ 200 [0.98, 127.0.0.1:63984][0m
+ERROR 2026-06-21 00:50:16,230 log 7880 4284 Internal Server Error: /api/senders
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/senders/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2026-06-21 00:50:16,232 runserver 7880 9040 [35;1mHTTP POST /api/senders 500 [0.10, 127.0.0.1:53986][0m
+WARNING 2026-06-21 00:51:48,725 log 7880 12428 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-21 00:51:48,725 runserver 7880 9040 [31;1mHTTP GET /api/auth/login/ 405 [0.00, 127.0.0.1:50625][0m
+INFO 2026-06-21 00:51:49,502 runserver 7880 9040 [mHTTP POST /api/auth/login/ 200 [0.77, 127.0.0.1:50625][0m
+WARNING 2026-06-21 00:51:49,702 log 7880 12428 Forbidden: /api/senders/
+WARNING 2026-06-21 00:51:49,704 runserver 7880 9040 [31;1mHTTP GET /api/senders/ 403 [0.20, 127.0.0.1:50625][0m
+WARNING 2026-06-21 00:51:49,899 log 7880 12428 Forbidden: /api/emails/campaigns/
+WARNING 2026-06-21 00:51:49,900 runserver 7880 9040 [31;1mHTTP GET /api/emails/campaigns/ 403 [0.18, 127.0.0.1:50625][0m
+WARNING 2026-06-21 00:51:50,096 log 7880 12428 Forbidden: /api/categories/
+WARNING 2026-06-21 00:51:50,097 runserver 7880 9040 [31;1mHTTP GET /api/categories/ 403 [0.19, 127.0.0.1:50625][0m
+WARNING 2026-06-21 00:51:50,271 log 7880 12428 Forbidden: /api/dashboard/stats/
+WARNING 2026-06-21 00:51:50,272 runserver 7880 9040 [31;1mHTTP GET /api/dashboard/stats/ 403 [0.17, 127.0.0.1:50625][0m
+INFO 2026-06-21 00:51:50,490 runserver 7880 9040 [mHTTP GET /api/notifications/ 200 [0.21, 127.0.0.1:50625][0m
+INFO 2026-06-21 00:54:44,757 autoreload 12904 12100 Watching for file changes with StatReloader
+WARNING 2026-06-21 00:55:07,105 log 12904 12420 Unauthorized: /api/auth/profile/
+WARNING 2026-06-21 00:55:07,106 runserver 12904 8196 [31;1mHTTP GET /api/auth/profile/ 401 [0.02, 127.0.0.1:58304][0m
+WARNING 2026-06-21 00:55:07,113 log 12904 12420 Unauthorized: /api/auth/profile/
+WARNING 2026-06-21 00:55:07,114 runserver 12904 8196 [31;1mHTTP GET /api/auth/profile/ 401 [0.01, 127.0.0.1:58304][0m
+INFO 2026-06-21 00:55:07,117 runserver 12904 8196 [mHTTP OPTIONS /api/auth/token/refresh/ 200 [0.00, 127.0.0.1:58304][0m
+INFO 2026-06-21 00:55:07,120 runserver 12904 8196 [mHTTP OPTIONS /api/auth/token/refresh/ 200 [0.00, 127.0.0.1:58304][0m
+ERROR 2026-06-21 00:55:07,238 log 12904 12420 Internal Server Error: /api/auth/token/refresh/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework_simplejwt\views.py", line 46, in post
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\serializers.py", line 459, in run_validation
+    value = self.validate(value)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework_simplejwt\serializers.py", line 116, in validate
+    user := get_user_model().objects.get(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        **{api_settings.USER_ID_FIELD: user_id}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+apps.accounts.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2026-06-21 00:55:07,253 runserver 12904 8196 [35;1mHTTP POST /api/auth/token/refresh/ 500 [0.13, 127.0.0.1:58304][0m
+ERROR 2026-06-21 00:55:07,299 log 12904 12420 Internal Server Error: /api/auth/token/refresh/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework_simplejwt\views.py", line 46, in post
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\serializers.py", line 459, in run_validation
+    value = self.validate(value)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework_simplejwt\serializers.py", line 116, in validate
+    user := get_user_model().objects.get(
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        **{api_settings.USER_ID_FIELD: user_id}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+apps.accounts.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2026-06-21 00:55:07,310 runserver 12904 8196 [35;1mHTTP POST /api/auth/token/refresh/ 500 [0.05, 127.0.0.1:58304][0m
+INFO 2026-06-21 00:55:24,776 runserver 12904 8196 [mHTTP POST /api/auth/login/ 200 [0.77, 127.0.0.1:58304][0m
+INFO 2026-06-21 00:58:11,471 autoreload 13316 13416 Watching for file changes with StatReloader
+WARNING 2026-06-21 00:58:23,564 log 13316 13328 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-21 00:58:23,565 runserver 13316 1528 [31;1mHTTP GET /api/auth/login/ 405 [0.01, 127.0.0.1:49983][0m
+INFO 2026-06-21 00:58:24,316 runserver 13316 1528 [mHTTP POST /api/auth/login/ 200 [0.74, 127.0.0.1:49983][0m
+WARNING 2026-06-21 00:58:24,529 log 13316 13328 Forbidden: /api/senders/
+WARNING 2026-06-21 00:58:24,531 runserver 13316 1528 [31;1mHTTP GET /api/senders/ 403 [0.21, 127.0.0.1:49983][0m
+WARNING 2026-06-21 00:58:24,734 log 13316 13328 Forbidden: /api/emails/campaigns/
+WARNING 2026-06-21 00:58:24,736 runserver 13316 1528 [31;1mHTTP GET /api/emails/campaigns/ 403 [0.19, 127.0.0.1:49983][0m
+WARNING 2026-06-21 00:58:24,934 log 13316 13328 Forbidden: /api/categories/
+WARNING 2026-06-21 00:58:24,936 runserver 13316 1528 [31;1mHTTP GET /api/categories/ 403 [0.18, 127.0.0.1:49983][0m
+WARNING 2026-06-21 00:58:25,128 log 13316 13328 Forbidden: /api/dashboard/stats/
+WARNING 2026-06-21 00:58:25,130 runserver 13316 1528 [31;1mHTTP GET /api/dashboard/stats/ 403 [0.17, 127.0.0.1:49983][0m
+INFO 2026-06-21 00:58:25,311 runserver 13316 1528 [mHTTP GET /api/notifications/ 200 [0.17, 127.0.0.1:49983][0m
+INFO 2026-06-21 00:59:31,180 autoreload 4132 1752 Watching for file changes with StatReloader
+WARNING 2026-06-21 00:59:43,349 log 4132 9648 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-21 00:59:43,350 runserver 4132 5748 [31;1mHTTP GET /api/auth/login/ 405 [0.01, 127.0.0.1:49339][0m
+INFO 2026-06-21 00:59:44,122 runserver 4132 5748 [mHTTP POST /api/auth/login/ 200 [0.76, 127.0.0.1:49339][0m
+WARNING 2026-06-21 00:59:44,304 log 4132 9648 Forbidden: /api/senders/
+WARNING 2026-06-21 00:59:44,306 runserver 4132 5748 [31;1mHTTP GET /api/senders/ 403 [0.18, 127.0.0.1:49339][0m
+WARNING 2026-06-21 00:59:44,529 log 4132 9648 Forbidden: /api/emails/campaigns/
+WARNING 2026-06-21 00:59:44,530 runserver 4132 5748 [31;1mHTTP GET /api/emails/campaigns/ 403 [0.21, 127.0.0.1:49339][0m
+WARNING 2026-06-21 00:59:44,753 log 4132 9648 Forbidden: /api/categories/
+WARNING 2026-06-21 00:59:44,755 runserver 4132 5748 [31;1mHTTP GET /api/categories/ 403 [0.21, 127.0.0.1:49339][0m
+WARNING 2026-06-21 00:59:44,981 log 4132 9648 Forbidden: /api/dashboard/stats/
+WARNING 2026-06-21 00:59:44,982 runserver 4132 5748 [31;1mHTTP GET /api/dashboard/stats/ 403 [0.21, 127.0.0.1:49339][0m
+INFO 2026-06-21 00:59:45,195 runserver 4132 5748 [mHTTP GET /api/notifications/ 200 [0.19, 127.0.0.1:49339][0m
+INFO 2026-06-21 01:03:51,423 autoreload 6300 8812 Watching for file changes with StatReloader
+WARNING 2026-06-21 01:03:59,249 log 6300 2960 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-21 01:03:59,249 runserver 6300 13876 [31;1mHTTP GET /api/auth/login/ 405 [0.01, 127.0.0.1:49605][0m
+INFO 2026-06-21 01:04:00,029 runserver 6300 13876 [mHTTP POST /api/auth/login/ 200 [0.77, 127.0.0.1:49605][0m
+INFO 2026-06-21 01:04:00,229 runserver 6300 13876 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:49605][0m
+ERROR 2026-06-21 01:04:00,290 log 6300 2960 Internal Server Error: /api/emails/campaigns/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\generics.py", line 67, in get_queryset
+    assert self.queryset is not None, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EmailCampaignViewSet' should either include a `queryset` attribute, or override the `get_queryset()` method.
+ERROR 2026-06-21 01:04:00,514 runserver 6300 13876 [35;1mHTTP GET /api/emails/campaigns/ 500 [0.27, 127.0.0.1:49605][0m
+ERROR 2026-06-21 01:04:00,565 log 6300 2960 Internal Server Error: /api/categories/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\generics.py", line 67, in get_queryset
+    assert self.queryset is not None, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'CategoryViewSet' should either include a `queryset` attribute, or override the `get_queryset()` method.
+ERROR 2026-06-21 01:04:00,755 runserver 6300 13876 [35;1mHTTP GET /api/categories/ 500 [0.21, 127.0.0.1:49605][0m
+WARNING 2026-06-21 01:04:00,962 log 6300 2960 Forbidden: /api/dashboard/stats/
+WARNING 2026-06-21 01:04:00,962 runserver 6300 13876 [31;1mHTTP GET /api/dashboard/stats/ 403 [0.17, 127.0.0.1:49605][0m
+INFO 2026-06-21 01:04:01,145 runserver 6300 13876 [mHTTP GET /api/notifications/ 200 [0.18, 127.0.0.1:49605][0m
+INFO 2026-06-21 01:06:23,785 autoreload 10688 6436 Watching for file changes with StatReloader
+WARNING 2026-06-21 01:06:28,444 log 10688 11660 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-21 01:06:28,445 runserver 10688 10308 [31;1mHTTP GET /api/auth/login/ 405 [0.01, 127.0.0.1:50416][0m
+INFO 2026-06-21 01:06:29,255 runserver 10688 10308 [mHTTP POST /api/auth/login/ 200 [0.80, 127.0.0.1:50416][0m
+INFO 2026-06-21 01:06:29,454 runserver 10688 10308 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:50416][0m
+ERROR 2026-06-21 01:06:29,492 log 10688 11660 Internal Server Error: /api/emails/campaigns/
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\asgiref\sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ~~~~~~~~~~~~~~~~~^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\rest_framework\generics.py", line 67, in get_queryset
+    assert self.queryset is not None, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'EmailCampaignViewSet' should either include a `queryset` attribute, or override the `get_queryset()` method.
+ERROR 2026-06-21 01:06:29,708 runserver 10688 10308 [35;1mHTTP GET /api/emails/campaigns/ 500 [0.24, 127.0.0.1:50416][0m
+INFO 2026-06-21 01:06:29,931 runserver 10688 10308 [mHTTP GET /api/categories/ 200 [0.19, 127.0.0.1:50416][0m
+WARNING 2026-06-21 01:06:30,128 log 10688 11660 Forbidden: /api/dashboard/stats/
+WARNING 2026-06-21 01:06:30,129 runserver 10688 10308 [31;1mHTTP GET /api/dashboard/stats/ 403 [0.18, 127.0.0.1:50416][0m
+INFO 2026-06-21 01:06:30,380 runserver 10688 10308 [mHTTP GET /api/notifications/ 200 [0.25, 127.0.0.1:50416][0m
+INFO 2026-06-21 01:08:53,805 autoreload 11076 2132 Watching for file changes with StatReloader
+WARNING 2026-06-21 01:08:56,545 log 11076 5388 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-21 01:08:56,546 runserver 11076 5348 [31;1mHTTP GET /api/auth/login/ 405 [0.01, 127.0.0.1:51758][0m
+INFO 2026-06-21 01:08:57,393 runserver 11076 5348 [mHTTP POST /api/auth/login/ 200 [0.84, 127.0.0.1:51758][0m
+INFO 2026-06-21 01:08:57,588 runserver 11076 5348 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:51758][0m
+INFO 2026-06-21 01:08:57,796 runserver 11076 5348 [mHTTP GET /api/emails/campaigns/ 200 [0.19, 127.0.0.1:51758][0m
+INFO 2026-06-21 01:08:57,996 runserver 11076 5348 [mHTTP GET /api/categories/ 200 [0.19, 127.0.0.1:51758][0m
+WARNING 2026-06-21 01:08:58,179 log 11076 5388 Forbidden: /api/dashboard/stats/
+WARNING 2026-06-21 01:08:58,180 runserver 11076 5348 [31;1mHTTP GET /api/dashboard/stats/ 403 [0.18, 127.0.0.1:51758][0m
+INFO 2026-06-21 01:08:58,382 runserver 11076 5348 [mHTTP GET /api/notifications/ 200 [0.20, 127.0.0.1:51758][0m
+INFO 2026-06-21 01:09:43,257 autoreload 13452 4448 Watching for file changes with StatReloader
+WARNING 2026-06-21 01:09:49,161 log 13452 12876 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-21 01:09:49,161 runserver 13452 8196 [31;1mHTTP GET /api/auth/login/ 405 [0.01, 127.0.0.1:52964][0m
+INFO 2026-06-21 01:09:49,977 runserver 13452 8196 [mHTTP POST /api/auth/login/ 200 [0.81, 127.0.0.1:52964][0m
+INFO 2026-06-21 01:09:50,182 runserver 13452 8196 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:52964][0m
+INFO 2026-06-21 01:09:50,382 runserver 13452 8196 [mHTTP GET /api/emails/campaigns/ 200 [0.20, 127.0.0.1:52964][0m
+INFO 2026-06-21 01:09:50,613 runserver 13452 8196 [mHTTP GET /api/categories/ 200 [0.22, 127.0.0.1:52964][0m
+INFO 2026-06-21 01:09:50,826 runserver 13452 8196 [mHTTP GET /api/dashboard/stats/ 200 [0.21, 127.0.0.1:52964][0m
+INFO 2026-06-21 01:09:51,020 runserver 13452 8196 [mHTTP GET /api/notifications/ 200 [0.19, 127.0.0.1:52964][0m
+INFO 2026-06-21 01:10:33,947 runserver 13452 8196 [mHTTP GET /api/auth/profile/ 200 [0.36, 127.0.0.1:53394][0m
+INFO 2026-06-21 01:10:34,182 runserver 13452 8196 [mHTTP GET /api/auth/profile/ 200 [0.23, 127.0.0.1:53394][0m
+INFO 2026-06-21 01:10:43,456 runserver 13452 8196 [mHTTP OPTIONS /api/senders/ 200 [0.00, 127.0.0.1:64695][0m
+INFO 2026-06-21 01:10:43,457 runserver 13452 8196 [mHTTP OPTIONS /api/senders/ 200 [0.01, 127.0.0.1:53394][0m
+INFO 2026-06-21 01:10:43,671 runserver 13452 8196 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:53394][0m
+INFO 2026-06-21 01:10:43,898 runserver 13452 8196 [mHTTP GET /api/senders/ 200 [0.22, 127.0.0.1:53394][0m
+INFO 2026-06-21 01:45:58,312 autoreload 10884 5080 Watching for file changes with StatReloader
+WARNING 2026-06-21 01:47:12,459 log 10884 3892 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-21 01:47:12,461 runserver 10884 7192 [31;1mHTTP GET /api/auth/login/ 405 [0.05, 127.0.0.1:54503][0m
+INFO 2026-06-21 01:47:13,394 runserver 10884 7192 [mHTTP POST /api/auth/login/ 200 [0.91, 127.0.0.1:54503][0m
+INFO 2026-06-21 01:47:13,620 runserver 10884 7192 [mHTTP GET /api/senders/ 200 [0.22, 127.0.0.1:54503][0m
+INFO 2026-06-21 01:47:13,959 runserver 10884 7192 [mHTTP GET /api/categories/ 200 [0.33, 127.0.0.1:54503][0m
+INFO 2026-06-21 01:47:14,142 runserver 10884 7192 [mHTTP GET /api/emails/campaigns/ 200 [0.18, 127.0.0.1:54503][0m
+INFO 2026-06-21 01:47:14,369 runserver 10884 7192 [mHTTP GET /api/dashboard/stats/ 200 [0.22, 127.0.0.1:54503][0m
+INFO 2026-06-21 01:47:14,603 runserver 10884 7192 [mHTTP GET /api/notifications/ 200 [0.23, 127.0.0.1:54503][0m
+INFO 2026-06-21 01:47:14,627 runserver 10884 7192 [mHTTP POST /api/auth/token/refresh/ 200 [0.02, 127.0.0.1:54503][0m
+INFO 2026-06-21 01:53:41,615 runserver 10884 7192 [mHTTP OPTIONS /api/auth/profile/ 200 [0.01, 127.0.0.1:56918][0m
+INFO 2026-06-21 01:53:41,617 runserver 10884 7192 [mHTTP OPTIONS /api/auth/profile/ 200 [0.01, 127.0.0.1:51101][0m
+INFO 2026-06-21 01:53:41,838 runserver 10884 7192 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:51101][0m
+INFO 2026-06-21 01:53:42,062 runserver 10884 7192 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:51101][0m
+INFO 2026-06-21 01:54:24,294 runserver 10884 7192 [mHTTP OPTIONS /api/senders/ 200 [0.00, 127.0.0.1:51101][0m
+INFO 2026-06-21 01:54:24,299 runserver 10884 7192 [mHTTP OPTIONS /api/senders/ 200 [0.01, 127.0.0.1:56918][0m
+INFO 2026-06-21 01:54:24,510 runserver 10884 7192 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:51101][0m
+INFO 2026-06-21 01:54:24,733 runserver 10884 7192 [mHTTP GET /api/senders/ 200 [0.22, 127.0.0.1:51101][0m
+INFO 2026-06-21 02:06:18,110 runserver 10884 7192 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:53854][0m
+INFO 2026-06-21 02:06:18,294 runserver 10884 7192 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:53854][0m
+ERROR 2026-06-21 02:06:55,524 log 10884 60 Internal Server Error: /api/emails/campaigns
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/emails/campaigns/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2026-06-21 02:06:55,526 runserver 10884 7192 [35;1mHTTP POST /api/emails/campaigns 500 [0.16, 127.0.0.1:57006][0m
+ERROR 2026-06-21 02:07:38,125 log 10884 11936 Internal Server Error: /api/emails/campaigns
+Traceback (most recent call last):
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\send\email_panel_project\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/emails/campaigns/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2026-06-21 02:07:38,127 runserver 10884 7192 [35;1mHTTP POST /api/emails/campaigns 500 [0.03, 127.0.0.1:60533][0m
+INFO 2026-06-21 02:22:46,083 autoreload 12784 12040 Watching for file changes with StatReloader
+INFO 2026-06-21 02:23:07,214 runserver 12784 4020 [mHTTP POST /api/auth/login/ 200 [0.75, 127.0.0.1:52193][0m
+INFO 2026-06-21 02:23:47,499 runserver 12784 4020 [mHTTP POST /api/emails/campaigns/ 201 [0.39, 127.0.0.1:60831][0m
+INFO 2026-06-21 02:24:01,451 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.14, 127.0.0.1:57441][0m
+INFO 2026-06-21 02:24:01,656 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:57441][0m
+INFO 2026-06-21 02:26:37,061 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.40, 127.0.0.1:59008][0m
+INFO 2026-06-21 02:26:37,244 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:59008][0m
+INFO 2026-06-21 02:27:19,501 runserver 12784 4020 [mHTTP OPTIONS /api/emails/campaigns/ 200 [0.00, 127.0.0.1:59008][0m
+INFO 2026-06-21 02:27:19,840 runserver 12784 4020 [mHTTP POST /api/emails/campaigns/ 201 [0.34, 127.0.0.1:59008][0m
+INFO 2026-06-21 02:27:30,999 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.17, 127.0.0.1:59008][0m
+INFO 2026-06-21 02:27:31,179 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.17, 127.0.0.1:59008][0m
+INFO 2026-06-21 02:29:11,813 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:49562][0m
+INFO 2026-06-21 02:29:11,994 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:49562][0m
+INFO 2026-06-21 02:29:12,135 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.52, 127.0.0.1:55781][0m
+INFO 2026-06-21 02:29:12,302 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.17, 127.0.0.1:55781][0m
+INFO 2026-06-21 02:30:35,696 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.19, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:30:35,896 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.40, 127.0.0.1:54660][0m
+INFO 2026-06-21 02:30:36,077 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.38, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:30:36,242 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.34, 127.0.0.1:54660][0m
+INFO 2026-06-21 02:30:38,893 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:54660][0m
+INFO 2026-06-21 02:30:39,089 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:54660][0m
+INFO 2026-06-21 02:30:40,591 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.19, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:30:40,763 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.36, 127.0.0.1:54660][0m
+INFO 2026-06-21 02:30:40,930 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.17, 127.0.0.1:54660][0m
+INFO 2026-06-21 02:30:41,124 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.53, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:30:43,059 runserver 12784 4020 [mHTTP OPTIONS /api/emails/campaigns/0397b0d5-c012-4f0b-b806-eaca3aa37460/ 200 [0.00, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:30:43,303 runserver 12784 4020 [mHTTP DELETE /api/emails/campaigns/0397b0d5-c012-4f0b-b806-eaca3aa37460/ 204 [0.24, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:30:43,468 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.16, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:30:47,930 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:30:48,108 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:30:59,869 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:31:00,027 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.35, 127.0.0.1:54660][0m
+INFO 2026-06-21 02:31:00,195 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.32, 127.0.0.1:59471][0m
+INFO 2026-06-21 02:31:00,351 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.32, 127.0.0.1:54660][0m
+INFO 2026-06-21 02:33:21,776 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.17, 127.0.0.1:50415][0m
+INFO 2026-06-21 02:33:22,177 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.57, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:22,403 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.22, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:22,550 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.77, 127.0.0.1:50415][0m
+INFO 2026-06-21 02:33:23,997 runserver 12784 4020 [mHTTP OPTIONS /api/emails/campaigns/52cbf216-8a53-4796-b543-9f318f928ac5/ 200 [0.00, 127.0.0.1:50415][0m
+INFO 2026-06-21 02:33:23,997 runserver 12784 4020 [mHTTP OPTIONS /api/emails/campaigns/52cbf216-8a53-4796-b543-9f318f928ac5/ 200 [0.00, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:24,184 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/52cbf216-8a53-4796-b543-9f318f928ac5/ 200 [0.18, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:24,373 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/52cbf216-8a53-4796-b543-9f318f928ac5/ 200 [0.18, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:41,517 runserver 12784 4020 [mHTTP PUT /api/emails/campaigns/52cbf216-8a53-4796-b543-9f318f928ac5/ 200 [0.33, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:41,971 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/52cbf216-8a53-4796-b543-9f318f928ac5/ 200 [0.19, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:42,175 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/52cbf216-8a53-4796-b543-9f318f928ac5/ 200 [0.20, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:46,479 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.18, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:46,677 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.19, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:48,019 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/52cbf216-8a53-4796-b543-9f318f928ac5/ 200 [0.19, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:48,191 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/52cbf216-8a53-4796-b543-9f318f928ac5/ 200 [0.17, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:49,847 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.17, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:50,022 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.17, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:53,369 runserver 12784 4020 [mHTTP DELETE /api/emails/campaigns/52cbf216-8a53-4796-b543-9f318f928ac5/ 204 [0.27, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:33:53,560 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.19, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:34:51,030 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:34:51,227 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:34:52,887 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:34:53,080 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:34:56,190 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.22, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:34:56,367 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.17, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:34:57,540 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:34:57,722 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.18, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:14,070 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:14,220 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.15, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:14,388 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.17, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:14,814 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.63, 127.0.0.1:50746][0m
+INFO 2026-06-21 02:35:18,495 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:50746][0m
+INFO 2026-06-21 02:35:18,699 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:50746][0m
+INFO 2026-06-21 02:35:23,986 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:50746][0m
+INFO 2026-06-21 02:35:24,197 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.39, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:24,402 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.41, 127.0.0.1:50746][0m
+INFO 2026-06-21 02:35:24,577 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.38, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:38,221 runserver 12784 4020 [mHTTP POST /api/emails/campaigns/ 201 [0.37, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:38,430 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.18, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:38,612 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.18, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:40,503 runserver 12784 4020 [mHTTP OPTIONS /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.02, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:40,503 runserver 12784 4020 [mHTTP OPTIONS /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.02, 127.0.0.1:50746][0m
+INFO 2026-06-21 02:35:40,672 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.17, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:35:41,076 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.40, 127.0.0.1:57352][0m
+INFO 2026-06-21 02:39:33,160 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.16, 127.0.0.1:59265][0m
+INFO 2026-06-21 02:39:33,309 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.15, 127.0.0.1:59265][0m
+INFO 2026-06-21 02:39:33,485 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.44, 127.0.0.1:51827][0m
+INFO 2026-06-21 02:39:54,563 runserver 12784 4020 [mHTTP PUT /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.35, 127.0.0.1:51827][0m
+INFO 2026-06-21 02:39:55,488 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.16, 127.0.0.1:51827][0m
+INFO 2026-06-21 02:39:55,688 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.20, 127.0.0.1:51827][0m
+INFO 2026-06-21 02:46:16,722 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.43, 127.0.0.1:56415][0m
+INFO 2026-06-21 02:46:16,929 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.64, 127.0.0.1:51970][0m
+INFO 2026-06-21 02:46:17,120 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.19, 127.0.0.1:51970][0m
+INFO 2026-06-21 02:46:17,289 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.56, 127.0.0.1:56415][0m
+INFO 2026-06-21 02:46:23,441 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.17, 127.0.0.1:56415][0m
+INFO 2026-06-21 02:46:23,621 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.18, 127.0.0.1:56415][0m
+INFO 2026-06-21 02:47:31,329 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.24, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:32,131 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.80, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:36,110 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.19, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:36,285 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.17, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:38,863 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.20, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:39,070 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.21, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:44,491 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.20, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:44,673 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.18, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:49,577 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.20, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:49,768 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.19, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:53,215 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.20, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:53,417 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/8745c83b-9690-450a-a71f-268705816c02/ 200 [0.20, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:54,455 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.18, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:47:54,642 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.19, 127.0.0.1:54312][0m
+INFO 2026-06-21 02:48:55,352 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:49977][0m
+INFO 2026-06-21 02:48:55,543 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:49977][0m
+INFO 2026-06-21 02:51:34,628 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.68, 127.0.0.1:50762][0m
+INFO 2026-06-21 02:51:34,841 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:50762][0m
+INFO 2026-06-21 02:51:35,019 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [1.07, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:51:35,216 runserver 12784 4020 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:51:36,476 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.17, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:51:36,989 runserver 12784 4020 [mHTTP GET /api/emails/campaigns/ 200 [0.51, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:51:37,275 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:51:37,459 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.18, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:52:12,864 runserver 12784 4020 [mHTTP POST /api/senders/ 201 [0.41, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:52:13,047 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.17, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:52:15,556 runserver 12784 4020 [mHTTP OPTIONS /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/toggle/ 200 [0.00, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:52:15,910 runserver 12784 4020 [mHTTP POST /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/toggle/ 200 [0.35, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:52:16,110 runserver 12784 4020 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:52:17,600 runserver 12784 4020 [mHTTP OPTIONS /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/test/ 200 [0.00, 127.0.0.1:61497][0m
+WARNING 2026-06-21 02:52:17,765 log 12784 10160 Bad Request: /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/test/
+WARNING 2026-06-21 02:52:17,765 runserver 12784 4020 [31;1mHTTP POST /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/test/ 400 [0.16, 127.0.0.1:61497][0m
+WARNING 2026-06-21 02:52:19,946 log 12784 10160 Bad Request: /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/test/
+WARNING 2026-06-21 02:52:19,946 runserver 12784 4020 [31;1mHTTP POST /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/test/ 400 [0.16, 127.0.0.1:61497][0m
+INFO 2026-06-21 02:55:29,271 autoreload 3284 2668 Watching for file changes with StatReloader
+INFO 2026-06-21 02:55:38,273 runserver 3284 2820 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:57921][0m
+INFO 2026-06-21 02:55:38,454 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.41, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:55:38,721 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.26, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:55:38,896 runserver 3284 2820 [mHTTP GET /api/auth/profile/ 200 [0.62, 127.0.0.1:57921][0m
+INFO 2026-06-21 02:55:47,836 runserver 3284 2820 [mHTTP POST /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/test/ 200 [6.42, 127.0.0.1:57921][0m
+INFO 2026-06-21 02:55:48,039 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:57921][0m
+INFO 2026-06-21 02:55:48,977 runserver 3284 2820 [mHTTP POST /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/test/ 200 [3.08, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:55:49,155 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.18, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:55:53,260 runserver 3284 2820 [mHTTP POST /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/toggle/ 200 [0.37, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:55:53,484 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.22, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:55:58,634 runserver 3284 2820 [mHTTP POST /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/test/ 200 [3.57, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:55:58,838 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:56:04,112 runserver 3284 2820 [mHTTP GET /api/emails/campaigns/ 200 [0.87, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:56:04,295 runserver 3284 2820 [mHTTP GET /api/emails/campaigns/ 200 [0.18, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:56:08,078 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:56:08,266 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.18, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:56:16,185 runserver 3284 2820 [mHTTP POST /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/test/ 200 [4.15, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:56:16,386 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:56:48,078 runserver 3284 2820 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:56:48,259 runserver 3284 2820 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:56:49,652 runserver 3284 2820 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:56:49,877 runserver 3284 2820 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:57:04,335 runserver 3284 2820 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:57:04,521 runserver 3284 2820 [mHTTP GET /api/auth/profile/ 200 [0.18, 127.0.0.1:59268][0m
+INFO 2026-06-21 02:59:40,915 runserver 3284 2820 [mHTTP OPTIONS /api/dashboard/stats/ 200 [0.00, 127.0.0.1:52799][0m
+INFO 2026-06-21 02:59:40,915 runserver 3284 2820 [mHTTP OPTIONS /api/dashboard/stats/ 200 [0.00, 127.0.0.1:58241][0m
+INFO 2026-06-21 02:59:41,129 runserver 3284 2820 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:49977][0m
+INFO 2026-06-21 02:59:41,343 runserver 3284 2820 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:49977][0m
+INFO 2026-06-21 02:59:41,554 runserver 3284 2820 [mHTTP GET /api/dashboard/stats/ 200 [0.63, 127.0.0.1:58241][0m
+INFO 2026-06-21 02:59:41,854 runserver 3284 2820 [mHTTP GET /api/dashboard/stats/ 200 [0.30, 127.0.0.1:58241][0m
+INFO 2026-06-21 02:59:56,361 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:58241][0m
+INFO 2026-06-21 02:59:56,536 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.17, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:00:24,766 runserver 3284 2820 [mHTTP GET /api/dashboard/stats/ 200 [0.20, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:00:24,968 runserver 3284 2820 [mHTTP GET /api/dashboard/stats/ 200 [0.20, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:21,671 runserver 3284 2820 [mHTTP GET /api/emails/campaigns/ 200 [0.40, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:21,867 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:22,050 runserver 3284 2820 [mHTTP GET /api/emails/campaigns/ 200 [0.21, 127.0.0.1:55971][0m
+INFO 2026-06-21 03:01:22,208 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.34, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:31,823 runserver 3284 2820 [mHTTP POST /api/senders/ 201 [0.44, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:31,982 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.16, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:34,318 runserver 3284 2820 [mHTTP OPTIONS /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/test/ 200 [0.00, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:38,501 runserver 3284 2820 [mHTTP POST /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/test/ 200 [4.18, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:38,678 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.17, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:50,583 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.17, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:50,799 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:56,934 runserver 3284 2820 [mHTTP POST /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/test/ 200 [4.42, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:01:57,117 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.17, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:02:08,842 runserver 3284 2820 [mHTTP OPTIONS /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/toggle/ 200 [0.00, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:02:09,203 runserver 3284 2820 [mHTTP POST /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/toggle/ 200 [0.36, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:02:09,380 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.17, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:02:15,149 runserver 3284 2820 [mHTTP POST /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/test/ 200 [4.21, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:02:15,333 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.18, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:02:50,997 runserver 3284 2820 [mHTTP POST /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/toggle/ 200 [0.34, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:02:51,185 runserver 3284 2820 [mHTTP GET /api/senders/ 200 [0.18, 127.0.0.1:58241][0m
+INFO 2026-06-21 03:05:53,397 autoreload 6424 284 Watching for file changes with StatReloader
+INFO 2026-06-21 03:07:47,662 runserver 6424 5340 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:56453][0m
+INFO 2026-06-21 03:07:47,803 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.35, 127.0.0.1:59592][0m
+INFO 2026-06-21 03:07:47,986 runserver 6424 5340 [mHTTP GET /api/auth/profile/ 200 [0.32, 127.0.0.1:56453][0m
+INFO 2026-06-21 03:07:48,229 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.42, 127.0.0.1:59592][0m
+WARNING 2026-06-21 03:08:00,777 log 6424 4204 Bad Request: /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/test/
+WARNING 2026-06-21 03:08:00,779 runserver 6424 5340 [31;1mHTTP POST /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/test/ 400 [4.00, 127.0.0.1:59592][0m
+INFO 2026-06-21 03:08:00,993 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:59592][0m
+INFO 2026-06-21 03:09:54,085 runserver 6424 5340 [mHTTP POST /api/senders/ 201 [0.40, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:09:54,284 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:09:55,948 runserver 6424 5340 [mHTTP OPTIONS /api/senders/dcad08d5-931a-42b5-830e-c573c8a1d489/test/ 200 [0.00, 127.0.0.1:60801][0m
+WARNING 2026-06-21 03:09:59,523 log 6424 4204 Bad Request: /api/senders/dcad08d5-931a-42b5-830e-c573c8a1d489/test/
+WARNING 2026-06-21 03:09:59,525 runserver 6424 5340 [31;1mHTTP POST /api/senders/dcad08d5-931a-42b5-830e-c573c8a1d489/test/ 400 [3.58, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:09:59,712 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.18, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:10:04,231 runserver 6424 5340 [mHTTP OPTIONS /api/senders/dcad08d5-931a-42b5-830e-c573c8a1d489/ 200 [0.00, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:10:04,632 runserver 6424 5340 [mHTTP DELETE /api/senders/dcad08d5-931a-42b5-830e-c573c8a1d489/ 204 [0.40, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:10:04,844 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:10:06,887 runserver 6424 5340 [mHTTP OPTIONS /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/ 200 [0.00, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:10:07,247 runserver 6424 5340 [mHTTP DELETE /api/senders/4c93e6bf-f997-438e-ac18-2e17ad5ed094/ 204 [0.36, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:10:07,421 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.17, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:10:37,800 runserver 6424 5340 [mHTTP POST /api/senders/ 201 [0.47, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:10:38,017 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:10:39,687 runserver 6424 5340 [mHTTP OPTIONS /api/senders/0f1a9b74-7e0e-40e7-977d-6b1d64a6c290/test/ 200 [0.00, 127.0.0.1:60801][0m
+WARNING 2026-06-21 03:10:44,042 log 6424 4204 Bad Request: /api/senders/0f1a9b74-7e0e-40e7-977d-6b1d64a6c290/test/
+WARNING 2026-06-21 03:10:44,043 runserver 6424 5340 [31;1mHTTP POST /api/senders/0f1a9b74-7e0e-40e7-977d-6b1d64a6c290/test/ 400 [4.35, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:10:44,234 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:60801][0m
+INFO 2026-06-21 03:13:46,785 runserver 6424 5340 [mHTTP OPTIONS /api/senders/0f1a9b74-7e0e-40e7-977d-6b1d64a6c290/ 200 [0.00, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:13:47,194 runserver 6424 5340 [mHTTP DELETE /api/senders/0f1a9b74-7e0e-40e7-977d-6b1d64a6c290/ 204 [0.41, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:13:47,508 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.31, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:13:56,002 runserver 6424 5340 [mHTTP POST /api/senders/ 201 [0.42, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:13:56,201 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:13:58,559 runserver 6424 5340 [mHTTP OPTIONS /api/senders/b14c1137-694f-416f-91d8-37ddc2566d6f/test/ 200 [0.00, 127.0.0.1:57815][0m
+WARNING 2026-06-21 03:14:03,977 log 6424 4204 Bad Request: /api/senders/b14c1137-694f-416f-91d8-37ddc2566d6f/test/
+WARNING 2026-06-21 03:14:03,979 runserver 6424 5340 [31;1mHTTP POST /api/senders/b14c1137-694f-416f-91d8-37ddc2566d6f/test/ 400 [5.42, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:14:04,191 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:14:28,312 runserver 6424 5340 [mHTTP POST /api/senders/ 201 [0.40, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:14:28,525 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:14:29,903 runserver 6424 5340 [mHTTP OPTIONS /api/senders/df6da4d1-2c4f-434c-8c8e-c0f711445a82/test/ 200 [0.00, 127.0.0.1:57815][0m
+WARNING 2026-06-21 03:14:35,004 log 6424 4204 Bad Request: /api/senders/df6da4d1-2c4f-434c-8c8e-c0f711445a82/test/
+WARNING 2026-06-21 03:14:35,006 runserver 6424 5340 [31;1mHTTP POST /api/senders/df6da4d1-2c4f-434c-8c8e-c0f711445a82/test/ 400 [5.10, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:14:35,204 runserver 6424 5340 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:57815][0m
+INFO 2026-06-21 03:15:52,201 autoreload 8740 8472 Watching for file changes with StatReloader
+INFO 2026-06-21 03:16:04,076 runserver 8740 3732 [mHTTP POST /api/auth/login/ 200 [0.77, 127.0.0.1:56847][0m
+INFO 2026-06-21 03:16:23,517 runserver 8740 3732 [mHTTP GET /api/senders/ 200 [0.22, 127.0.0.1:56409][0m
+INFO 2026-06-21 03:16:50,210 runserver 8740 3732 [mHTTP POST /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/test/ 200 [3.90, 127.0.0.1:56428][0m
+WARNING 2026-06-21 03:17:14,867 log 8740 7608 Bad Request: /api/senders/df6da4d1-2c4f-434c-8c8e-c0f711445a82/test/
+WARNING 2026-06-21 03:17:14,868 runserver 8740 3732 [31;1mHTTP POST /api/senders/df6da4d1-2c4f-434c-8c8e-c0f711445a82/test/ 400 [3.45, 127.0.0.1:56442][0m
+INFO 2026-06-21 03:17:47,908 runserver 8740 3732 [mHTTP OPTIONS /api/senders/df6da4d1-2c4f-434c-8c8e-c0f711445a82/ 200 [0.00, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:17:48,299 runserver 8740 3732 [mHTTP DELETE /api/senders/df6da4d1-2c4f-434c-8c8e-c0f711445a82/ 204 [0.39, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:17:48,499 runserver 8740 3732 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:17:50,829 runserver 8740 3732 [mHTTP OPTIONS /api/senders/b14c1137-694f-416f-91d8-37ddc2566d6f/ 200 [0.00, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:17:51,232 runserver 8740 3732 [mHTTP DELETE /api/senders/b14c1137-694f-416f-91d8-37ddc2566d6f/ 204 [0.40, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:17:51,440 runserver 8740 3732 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:17:55,449 runserver 8740 3732 [mHTTP OPTIONS /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/ 200 [0.00, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:17:55,849 runserver 8740 3732 [mHTTP DELETE /api/senders/50d17e0d-728d-48ec-b063-9a9fa6b30844/ 204 [0.40, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:17:56,066 runserver 8740 3732 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:18:11,317 runserver 8740 3732 [mHTTP POST /api/senders/ 201 [0.39, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:18:11,528 runserver 8740 3732 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:18:12,650 runserver 8740 3732 [mHTTP OPTIONS /api/senders/566f7b95-7309-4975-a4dc-f9b80d60e6f7/test/ 200 [0.00, 127.0.0.1:57860][0m
+WARNING 2026-06-21 03:18:17,197 log 8740 7608 Bad Request: /api/senders/566f7b95-7309-4975-a4dc-f9b80d60e6f7/test/
+WARNING 2026-06-21 03:18:17,198 runserver 8740 3732 [31;1mHTTP POST /api/senders/566f7b95-7309-4975-a4dc-f9b80d60e6f7/test/ 400 [4.55, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:18:17,394 runserver 8740 3732 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:57860][0m
+INFO 2026-06-21 03:25:22,769 autoreload 6592 2516 Watching for file changes with StatReloader
+WARNING 2026-06-21 03:25:42,893 log 6592 8984 Unauthorized: /api/auth/profile/
+WARNING 2026-06-21 03:25:42,893 runserver 6592 8728 [31;1mHTTP GET /api/auth/profile/ 401 [0.02, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,899 log 6592 8984 Unauthorized: /api/auth/profile/
+WARNING 2026-06-21 03:25:42,900 runserver 6592 8728 [31;1mHTTP GET /api/auth/profile/ 401 [0.01, 127.0.0.1:65434][0m
+INFO 2026-06-21 03:25:42,904 runserver 6592 8728 [mHTTP OPTIONS /api/auth/token/refresh/ 200 [0.00, 127.0.0.1:65434][0m
+INFO 2026-06-21 03:25:42,908 runserver 6592 8728 [mHTTP OPTIONS /api/auth/token/refresh/ 200 [0.00, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,921 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:42,922 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,926 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:42,927 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.00, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,933 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:42,933 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,940 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:42,940 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,954 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:42,955 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,965 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:42,966 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,973 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:42,973 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,980 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:42,981 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,988 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:42,989 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:42,998 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:42,999 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,011 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,012 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,039 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,040 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.03, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,046 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,047 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.00, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,053 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,054 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,060 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,061 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.00, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,078 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,078 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,100 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,100 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.02, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,106 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,106 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.00, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,113 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,114 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,134 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,136 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.02, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,137 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,138 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,145 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,146 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,146 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,151 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,186 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,186 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.04, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,192 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,193 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.02, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,197 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,198 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,217 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,224 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,225 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.03, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,226 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.02, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,236 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,237 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,239 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,243 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,250 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,251 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,253 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,254 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,263 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,263 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,265 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,266 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,274 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,275 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,275 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,276 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,285 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,285 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,286 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,287 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,295 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,296 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,296 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,297 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,306 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,306 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,307 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,308 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,316 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,317 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,317 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,318 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,327 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,327 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,328 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,328 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,337 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,338 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,338 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,339 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,347 log 6592 8984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,348 log 6592 11984 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,348 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:43,349 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 401 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,357 log 6592 8984 Too Many Requests: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,357 log 6592 11984 Too Many Requests: /api/auth/token/refresh/
+WARNING 2026-06-21 03:25:43,358 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 429 [0.01, 127.0.0.1:63393][0m
+WARNING 2026-06-21 03:25:43,358 runserver 6592 8728 [31;1mHTTP POST /api/auth/token/refresh/ 429 [0.00, 127.0.0.1:65434][0m
+INFO 2026-06-21 03:25:57,809 runserver 6592 8728 [mHTTP OPTIONS /api/auth/login/ 200 [0.00, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:25:57,817 log 6592 8984 Too Many Requests: /api/auth/login/
+WARNING 2026-06-21 03:25:57,818 runserver 6592 8728 [31;1mHTTP POST /api/auth/login/ 429 [0.01, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:26:03,961 log 6592 11984 Too Many Requests: /api/auth/login/
+WARNING 2026-06-21 03:26:03,961 runserver 6592 8728 [31;1mHTTP POST /api/auth/login/ 429 [0.00, 127.0.0.1:65434][0m
+WARNING 2026-06-21 03:26:16,753 log 6592 8984 Too Many Requests: /api/auth/login/
+WARNING 2026-06-21 03:26:16,754 runserver 6592 8728 [31;1mHTTP POST /api/auth/login/ 429 [0.01, 127.0.0.1:65434][0m
+INFO 2026-06-21 03:26:25,639 autoreload 6592 2516 D:\send\email_panel_project\backend\email_panel\settings.py changed, reloading.
+INFO 2026-06-21 03:26:26,794 autoreload 4028 9464 Watching for file changes with StatReloader
+INFO 2026-06-21 03:26:30,700 autoreload 4028 9464 D:\send\email_panel_project\backend\apps\core\utils.py changed, reloading.
+INFO 2026-06-21 03:26:31,805 autoreload 1044 6940 Watching for file changes with StatReloader
+WARNING 2026-06-21 03:26:38,555 log 1044 12820 Unauthorized: /api/auth/login/
+WARNING 2026-06-21 03:26:38,558 runserver 1044 8340 [31;1mHTTP POST /api/auth/login/ 401 [0.80, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:26:48,718 runserver 1044 8340 [mHTTP POST /api/auth/login/ 200 [0.78, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:26:53,112 runserver 1044 8340 [mHTTP GET /api/emails/campaigns/ 200 [0.26, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:26:53,300 runserver 1044 8340 [mHTTP GET /api/emails/campaigns/ 200 [0.18, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:26:54,642 runserver 1044 8340 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:26:54,831 runserver 1044 8340 [mHTTP GET /api/senders/ 200 [0.18, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:27:25,826 runserver 1044 8340 [mHTTP POST /api/senders/ 201 [0.39, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:27:26,095 runserver 1044 8340 [mHTTP GET /api/senders/ 200 [0.26, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:27:27,142 runserver 1044 8340 [mHTTP OPTIONS /api/senders/a9c193ca-8344-447b-836b-1e86a64592a9/test/ 200 [0.00, 127.0.0.1:56814][0m
+WARNING 2026-06-21 03:27:31,797 log 1044 12820 Bad Request: /api/senders/a9c193ca-8344-447b-836b-1e86a64592a9/test/
+WARNING 2026-06-21 03:27:31,799 runserver 1044 8340 [31;1mHTTP POST /api/senders/a9c193ca-8344-447b-836b-1e86a64592a9/test/ 400 [4.66, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:27:32,014 runserver 1044 8340 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:56814][0m
+WARNING 2026-06-21 03:27:42,742 log 1044 12820 Bad Request: /api/senders/a9c193ca-8344-447b-836b-1e86a64592a9/test/
+WARNING 2026-06-21 03:27:42,743 runserver 1044 8340 [31;1mHTTP POST /api/senders/a9c193ca-8344-447b-836b-1e86a64592a9/test/ 400 [4.13, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:27:42,950 runserver 1044 8340 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:56814][0m
+INFO 2026-06-21 03:36:23,715 autoreload 10752 7988 Watching for file changes with StatReloader
+INFO 2026-06-21 03:36:28,506 runserver 10752 1556 [mHTTP GET /api/auth/profile/ 200 [0.24, 127.0.0.1:58338][0m
+INFO 2026-06-21 03:36:28,703 runserver 10752 1556 [mHTTP GET /api/auth/profile/ 200 [0.19, 127.0.0.1:58338][0m
+INFO 2026-06-21 03:36:28,895 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.64, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:29,106 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:63417][0m
+WARNING 2026-06-21 03:36:35,159 log 10752 8928 Bad Request: /api/senders/a9c193ca-8344-447b-836b-1e86a64592a9/test/
+WARNING 2026-06-21 03:36:35,162 runserver 10752 1556 [31;1mHTTP POST /api/senders/a9c193ca-8344-447b-836b-1e86a64592a9/test/ 400 [4.65, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:35,376 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:39,106 runserver 10752 1556 [mHTTP OPTIONS /api/senders/a9c193ca-8344-447b-836b-1e86a64592a9/ 200 [0.00, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:39,519 runserver 10752 1556 [mHTTP DELETE /api/senders/a9c193ca-8344-447b-836b-1e86a64592a9/ 204 [0.41, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:39,704 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.18, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:53,121 runserver 10752 1556 [mHTTP POST /api/senders/ 201 [0.50, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:53,313 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:54,568 runserver 10752 1556 [mHTTP OPTIONS /api/senders/7f80e387-3903-4ae0-b9c3-a0cafec2db00/toggle/ 200 [0.00, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:55,007 runserver 10752 1556 [mHTTP POST /api/senders/7f80e387-3903-4ae0-b9c3-a0cafec2db00/toggle/ 200 [0.44, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:55,197 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:36:56,205 runserver 10752 1556 [mHTTP OPTIONS /api/senders/7f80e387-3903-4ae0-b9c3-a0cafec2db00/test/ 200 [0.00, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:00,118 runserver 10752 1556 [mHTTP POST /api/senders/7f80e387-3903-4ae0-b9c3-a0cafec2db00/test/ 200 [3.91, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:00,322 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:04,893 runserver 10752 1556 [mHTTP POST /api/senders/7f80e387-3903-4ae0-b9c3-a0cafec2db00/toggle/ 200 [0.42, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:05,093 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:08,449 runserver 10752 1556 [mHTTP POST /api/senders/7f80e387-3903-4ae0-b9c3-a0cafec2db00/toggle/ 200 [0.41, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:08,663 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:28,880 runserver 10752 1556 [mHTTP POST /api/senders/ 201 [0.50, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:29,077 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.19, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:31,738 runserver 10752 1556 [mHTTP OPTIONS /api/senders/09faa15f-3525-4926-9ea1-a3381f58003c/test/ 200 [0.00, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:35,573 runserver 10752 1556 [mHTTP POST /api/senders/09faa15f-3525-4926-9ea1-a3381f58003c/test/ 200 [3.83, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:37:35,801 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.22, 127.0.0.1:63417][0m
+INFO 2026-06-21 03:38:50,552 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.33, 127.0.0.1:50821][0m
+INFO 2026-06-21 03:38:50,780 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.23, 127.0.0.1:50821][0m
+WARNING 2026-06-21 03:39:48,695 log 10752 8928 Unauthorized: /api/auth/login/
+WARNING 2026-06-21 03:39:48,696 runserver 10752 1556 [31;1mHTTP POST /api/auth/login/ 401 [0.76, 127.0.0.1:50371][0m
+INFO 2026-06-21 03:40:33,837 runserver 10752 1556 [mHTTP POST /api/auth/login/ 200 [0.75, 127.0.0.1:52870][0m
+INFO 2026-06-21 03:40:50,556 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.20, 127.0.0.1:52878][0m
+INFO 2026-06-21 03:41:33,546 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.21, 127.0.0.1:61099][0m
+INFO 2026-06-21 03:42:07,648 runserver 10752 1556 [mHTTP GET /api/auth/profile/ 200 [0.23, 127.0.0.1:65295][0m
+INFO 2026-06-21 03:42:07,891 runserver 10752 1556 [mHTTP GET /api/auth/profile/ 200 [0.24, 127.0.0.1:65295][0m
+INFO 2026-06-21 03:42:24,264 runserver 10752 1556 [mHTTP POST /api/auth/login/ 200 [0.87, 127.0.0.1:65295][0m
+INFO 2026-06-21 03:44:33,378 runserver 10752 1556 [mHTTP GET /api/auth/profile/ 200 [0.54, 127.0.0.1:59220][0m
+INFO 2026-06-21 03:44:33,644 runserver 10752 1556 [mHTTP GET /api/auth/profile/ 200 [0.26, 127.0.0.1:59220][0m
+INFO 2026-06-21 03:44:33,857 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [1.00, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:44:34,085 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.23, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:44:39,022 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:44:39,236 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/ 200 [0.21, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:44:40,176 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.20, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:44:40,376 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.20, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:44:48,511 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/ 200 [0.22, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:44:48,735 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/ 200 [0.22, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:01,483 runserver 10752 1556 [mHTTP POST /api/emails/campaigns/ 201 [0.41, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:01,721 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/ 200 [0.21, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:01,921 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/ 200 [0.20, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:03,391 runserver 10752 1556 [mHTTP OPTIONS /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.01, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:03,392 runserver 10752 1556 [mHTTP OPTIONS /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.01, 127.0.0.1:59220][0m
+INFO 2026-06-21 03:45:03,644 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.25, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:03,843 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.20, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:09,955 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.23, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:10,171 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.21, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:10,806 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.20, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:11,219 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.41, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:21,011 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.23, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:45:21,284 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.27, 127.0.0.1:54094][0m
+INFO 2026-06-21 03:47:35,618 runserver 10752 1556 [mHTTP GET /api/auth/profile/ 200 [0.23, 127.0.0.1:56896][0m
+INFO 2026-06-21 03:47:35,826 runserver 10752 1556 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:56896][0m
+INFO 2026-06-21 03:47:36,023 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.63, 127.0.0.1:55579][0m
+INFO 2026-06-21 03:47:36,207 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.18, 127.0.0.1:55579][0m
+INFO 2026-06-21 03:47:40,511 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.31, 127.0.0.1:55579][0m
+INFO 2026-06-21 03:47:40,711 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.20, 127.0.0.1:55579][0m
+INFO 2026-06-21 03:49:18,149 runserver 10752 1556 [mHTTP GET /api/auth/profile/ 200 [0.25, 127.0.0.1:49243][0m
+INFO 2026-06-21 03:49:18,357 runserver 10752 1556 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:49243][0m
+INFO 2026-06-21 03:49:18,563 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.66, 127.0.0.1:62352][0m
+INFO 2026-06-21 03:49:18,762 runserver 10752 1556 [mHTTP GET /api/dashboard/stats/ 200 [0.20, 127.0.0.1:62352][0m
+INFO 2026-06-21 03:49:22,966 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/ 200 [0.24, 127.0.0.1:62352][0m
+INFO 2026-06-21 03:49:23,153 runserver 10752 1556 [mHTTP GET /api/emails/campaigns/ 200 [0.19, 127.0.0.1:62352][0m
+INFO 2026-06-21 03:49:28,987 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:62352][0m
+INFO 2026-06-21 03:49:29,202 runserver 10752 1556 [mHTTP GET /api/senders/ 200 [0.21, 127.0.0.1:62352][0m
+INFO 2026-06-22 00:48:34,021 autoreload 14964 11552 Watching for file changes with StatReloader
+INFO 2026-06-22 00:50:00,536 runserver 14964 16228 [mHTTP OPTIONS /api/auth/login/ 200 [0.00, 127.0.0.1:51293][0m
+WARNING 2026-06-22 00:50:01,419 log 14964 5300 Unauthorized: /api/auth/login/
+WARNING 2026-06-22 00:50:01,421 runserver 14964 16228 [31;1mHTTP POST /api/auth/login/ 401 [0.88, 127.0.0.1:51293][0m
+INFO 2026-06-22 00:50:07,963 runserver 14964 16228 [mHTTP POST /api/auth/login/ 200 [0.92, 127.0.0.1:51293][0m
+INFO 2026-06-22 00:50:09,630 runserver 14964 16228 [mHTTP OPTIONS /api/dashboard/stats/ 200 [0.00, 127.0.0.1:56100][0m
+INFO 2026-06-22 00:50:09,630 runserver 14964 16228 [mHTTP OPTIONS /api/dashboard/stats/ 200 [0.00, 127.0.0.1:51293][0m
+INFO 2026-06-22 00:50:09,898 runserver 14964 16228 [mHTTP GET /api/dashboard/stats/ 200 [0.27, 127.0.0.1:51293][0m
+INFO 2026-06-22 00:50:10,120 runserver 14964 16228 [mHTTP GET /api/dashboard/stats/ 200 [0.22, 127.0.0.1:51293][0m
+INFO 2026-06-22 00:50:22,543 runserver 14964 16228 [mHTTP OPTIONS /api/senders/ 200 [0.00, 127.0.0.1:51293][0m
+INFO 2026-06-22 00:50:22,546 runserver 14964 16228 [mHTTP OPTIONS /api/senders/ 200 [0.00, 127.0.0.1:56100][0m
+INFO 2026-06-22 00:50:23,256 runserver 14964 16228 [mHTTP GET /api/senders/ 200 [0.71, 127.0.0.1:51293][0m
+INFO 2026-06-22 00:50:23,481 runserver 14964 16228 [mHTTP GET /api/senders/ 200 [0.22, 127.0.0.1:51293][0m
+INFO 2026-06-22 00:58:50,739 runserver 14964 16228 [mHTTP OPTIONS /api/auth/profile/ 200 [0.01, 127.0.0.1:53171][0m
+INFO 2026-06-22 00:58:50,741 runserver 14964 16228 [mHTTP OPTIONS /api/auth/profile/ 200 [0.01, 127.0.0.1:49978][0m
+INFO 2026-06-22 00:58:51,468 runserver 14964 16228 [mHTTP GET /api/senders/ 200 [0.74, 127.0.0.1:53505][0m
+INFO 2026-06-22 00:58:51,818 runserver 14964 16228 [mHTTP GET /api/auth/profile/ 200 [1.07, 127.0.0.1:49978][0m
+INFO 2026-06-22 00:58:52,020 runserver 14964 16228 [mHTTP GET /api/auth/profile/ 200 [0.20, 127.0.0.1:49978][0m
+INFO 2026-06-22 00:58:52,228 runserver 14964 16228 [mHTTP GET /api/senders/ 200 [0.76, 127.0.0.1:53505][0m
+INFO 2026-06-22 00:58:54,102 runserver 14964 16228 [mHTTP GET /api/dashboard/stats/ 200 [0.52, 127.0.0.1:53505][0m
+INFO 2026-06-22 00:58:54,341 runserver 14964 16228 [mHTTP GET /api/dashboard/stats/ 200 [0.23, 127.0.0.1:53505][0m
+INFO 2026-06-22 01:01:47,012 runserver 14964 16228 [mHTTP OPTIONS /api/auth/password-reset/ 200 [0.01, 127.0.0.1:63136][0m
+WARNING 2026-06-22 01:01:47,106 log 14964 5300 Not Found: /api/auth/password-reset/
+WARNING 2026-06-22 01:01:47,107 runserver 14964 16228 [33mHTTP POST /api/auth/password-reset/ 404 [0.09, 127.0.0.1:63136][0m
+INFO 2026-06-22 01:05:17,298 autoreload 1624 2564 Watching for file changes with StatReloader
+WARNING 2026-06-22 01:05:46,252 log 1624 5128 Unauthorized: /api/auth/login/
+WARNING 2026-06-22 01:05:46,253 runserver 1624 16004 [31;1mHTTP POST /api/auth/login/ 401 [0.80, 127.0.0.1:49422][0m
+INFO 2026-06-22 01:05:50,819 runserver 1624 16004 [mHTTP POST /api/auth/login/ 200 [0.81, 127.0.0.1:49422][0m
+INFO 2026-06-22 01:05:52,421 runserver 1624 16004 [mHTTP GET /api/dashboard/stats/ 200 [0.22, 127.0.0.1:49422][0m
+INFO 2026-06-22 01:05:52,845 runserver 1624 16004 [mHTTP GET /api/dashboard/stats/ 200 [0.42, 127.0.0.1:49422][0m
+INFO 2026-06-22 01:15:00,828 autoreload 13084 3236 Watching for file changes with StatReloader
+INFO 2026-06-22 01:15:10,905 runserver 13084 10080 [32mHTTP GET /admin/core/ 302 [0.10, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:11,197 runserver 13084 10080 [mHTTP GET /admin/login/?next=/admin/core/ 200 [0.29, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:11,248 runserver 13084 10080 [36mHTTP GET /static/admin/css/base.css 304 [0.03, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:11,249 runserver 13084 10080 [36mHTTP GET /static/admin/css/nav_sidebar.css 304 [0.01, 127.0.0.1:52238][0m
+INFO 2026-06-22 01:15:11,249 runserver 13084 10080 [36mHTTP GET /static/admin/css/login.css 304 [0.01, 127.0.0.1:51400][0m
+INFO 2026-06-22 01:15:11,258 runserver 13084 10080 [36mHTTP GET /static/admin/css/responsive.css 304 [0.01, 127.0.0.1:52238][0m
+INFO 2026-06-22 01:15:11,259 runserver 13084 10080 [36mHTTP GET /static/admin/css/dark_mode.css 304 [0.01, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:11,259 runserver 13084 10080 [36mHTTP GET /static/admin/js/theme.js 304 [0.01, 127.0.0.1:51400][0m
+INFO 2026-06-22 01:15:11,264 runserver 13084 10080 [36mHTTP GET /static/admin/js/nav_sidebar.js 304 [0.00, 127.0.0.1:51400][0m
+WARNING 2026-06-22 01:15:11,319 log 13084 11900 Not Found: /favicon.ico
+WARNING 2026-06-22 01:15:11,319 runserver 13084 10080 [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:51400][0m
+INFO 2026-06-22 01:15:25,617 runserver 13084 10080 [mHTTP POST /admin/login/?next=/admin/core/ 200 [0.62, 127.0.0.1:51400][0m
+INFO 2026-06-22 01:15:37,158 runserver 13084 10080 [32mHTTP POST /admin/login/?next=/admin/core/ 302 [1.09, 127.0.0.1:51400][0m
+INFO 2026-06-22 01:15:37,350 runserver 13084 10080 [mHTTP GET /admin/core/ 200 [0.18, 127.0.0.1:51400][0m
+INFO 2026-06-22 01:15:37,385 runserver 13084 10080 [36mHTTP GET /static/admin/css/dashboard.css 304 [0.00, 127.0.0.1:51400][0m
+INFO 2026-06-22 01:15:37,397 runserver 13084 10080 [36mHTTP GET /static/admin/img/icon-changelink.svg 304 [0.01, 127.0.0.1:52238][0m
+INFO 2026-06-22 01:15:37,398 runserver 13084 10080 [36mHTTP GET /static/admin/img/icon-addlink.svg 304 [0.02, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:43,409 runserver 13084 10080 [mHTTP GET /admin/ 200 [0.10, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:54,208 runserver 13084 10080 [mHTTP GET /admin/notifications/notification/add/ 200 [0.16, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:54,327 runserver 13084 10080 [mHTTP GET /static/admin/css/forms.css 200 [0.10, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:54,364 runserver 13084 10080 [mHTTP GET /admin/jsi18n/ 200 [0.13, 127.0.0.1:52238][0m
+INFO 2026-06-22 01:15:54,365 runserver 13084 10080 [mHTTP GET /static/admin/js/core.js 200 [0.04, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:54,369 runserver 13084 10080 [mHTTP GET /static/admin/css/widgets.css 200 [0.00, 127.0.0.1:52238][0m
+INFO 2026-06-22 01:15:54,370 runserver 13084 10080 [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.00, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:54,375 runserver 13084 10080 [mHTTP GET /static/admin/js/actions.js 200 [0.00, 127.0.0.1:52238][0m
+INFO 2026-06-22 01:15:54,376 runserver 13084 10080 [mHTTP GET /static/admin/js/urlify.js 200 [0.00, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:54,381 runserver 13084 10080 [mHTTP GET /static/admin/js/prepopulate.js 200 [0.00, 127.0.0.1:52238][0m
+INFO 2026-06-22 01:15:54,385 runserver 13084 10080 [mHTTP GET /static/admin/img/icon-viewlink.svg 200 [0.00, 127.0.0.1:52238][0m
+INFO 2026-06-22 01:15:54,388 runserver 13084 10080 [mHTTP GET /static/admin/js/prepopulate_init.js 200 [0.00, 127.0.0.1:52238][0m
+INFO 2026-06-22 01:15:54,397 runserver 13084 10080 [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.02, 127.0.0.1:59393][0m
+INFO 2026-06-22 01:15:54,431 runserver 13084 10080 [mHTTP GET /static/admin/js/admin/DateTimeShortcuts.js 200 [0.19, 127.0.0.1:55885][0m
+INFO 2026-06-22 01:15:54,432 runserver 13084 10080 [mHTTP GET /static/admin/js/calendar.js 200 [0.19, 127.0.0.1:62110][0m
+INFO 2026-06-22 01:15:54,436 runserver 13084 10080 [mHTTP GET /static/admin/js/jquery.init.js 200 [0.20, 127.0.0.1:57718][0m
+INFO 2026-06-22 01:15:54,439 runserver 13084 10080 [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.20, 127.0.0.1:51400][0m
+INFO 2026-06-22 01:15:54,442 runserver 13084 10080 [mHTTP GET /static/admin/js/change_form.js 200 [0.00, 127.0.0.1:57718][0m
+INFO 2026-06-22 01:15:54,492 runserver 13084 10080 [mHTTP GET /static/admin/img/icon-clock.svg 200 [0.01, 127.0.0.1:51400][0m
+INFO 2026-06-22 01:15:54,495 runserver 13084 10080 [mHTTP GET /static/admin/img/icon-calendar.svg 200 [0.01, 127.0.0.1:57718][0m
+INFO 2026-06-22 01:16:02,775 runserver 13084 10080 [mHTTP GET /admin/ 200 [0.11, 127.0.0.1:57718][0m
+INFO 2026-06-22 01:16:09,434 runserver 13084 10080 [mHTTP GET /admin/core/emaillog/add/ 200 [0.13, 127.0.0.1:57718][0m
+INFO 2026-06-22 01:16:09,485 runserver 13084 10080 [mHTTP GET /static/admin/img/icon-deletelink.svg 200 [0.01, 127.0.0.1:62110][0m
+INFO 2026-06-22 01:16:09,489 runserver 13084 10080 [mHTTP GET /static/admin/js/collapse.js 200 [0.01, 127.0.0.1:51400][0m
+INFO 2026-06-22 01:16:09,575 runserver 13084 10080 [mHTTP GET /admin/jsi18n/ 200 [0.10, 127.0.0.1:57718][0m
+INFO 2026-06-22 01:16:16,991 runserver 13084 10080 [mHTTP GET /admin/ 200 [0.10, 127.0.0.1:57718][0m
+INFO 2026-06-22 01:16:18,717 runserver 13084 10080 [mHTTP GET /admin/core/emailtemplate/add/ 200 [0.11, 127.0.0.1:57718][0m
+INFO 2026-06-22 01:16:18,847 runserver 13084 10080 [mHTTP GET /admin/jsi18n/ 200 [0.10, 127.0.0.1:57718][0m
+INFO 2026-06-22 01:16:21,478 runserver 13084 10080 [mHTTP GET /admin/ 200 [0.10, 127.0.0.1:57718][0m
+INFO 2026-06-22 01:20:11,712 autoreload 2340 13440 Watching for file changes with StatReloader
+INFO 2026-06-22 01:20:27,458 runserver 2340 1248 [mHTTP GET /admin/ 200 [0.19, 127.0.0.1:58786][0m
+INFO 2026-06-22 01:20:31,105 runserver 2340 1248 [mHTTP GET /admin/ 200 [0.09, 127.0.0.1:58786][0m
+WARNING 2026-06-22 01:20:56,276 log 2340 9804 Not Found: /
+WARNING 2026-06-22 01:20:56,277 runserver 2340 1248 [33mHTTP GET / 404 [0.10, 127.0.0.1:58786][0m
+INFO 2026-06-22 01:21:17,704 runserver 2340 1248 [mHTTP GET /admin/ 200 [0.11, 127.0.0.1:58786][0m
+INFO 2026-06-22 01:29:59,743 autoreload 960 16172 Watching for file changes with StatReloader
+INFO 2026-06-22 01:30:06,446 runserver 960 15656 [mHTTP GET /admin/ 200 [0.17, 127.0.0.1:58588][0m
+INFO 2026-06-22 01:51:23,145 autoreload 10224 12564 Watching for file changes with StatReloader
+INFO 2026-06-22 01:52:13,302 runserver 10224 9404 [mHTTP OPTIONS /api/auth/profile/ 200 [0.00, 127.0.0.1:50361][0m
+INFO 2026-06-22 01:52:13,303 runserver 10224 9404 [mHTTP OPTIONS /api/auth/profile/ 200 [0.00, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:13,603 runserver 10224 9404 [mHTTP GET /api/auth/profile/ 200 [0.29, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:13,945 runserver 10224 9404 [mHTTP GET /api/auth/profile/ 200 [0.34, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:15,410 runserver 10224 9404 [mHTTP OPTIONS /api/dashboard/stats/ 200 [0.00, 127.0.0.1:50361][0m
+INFO 2026-06-22 01:52:15,411 runserver 10224 9404 [mHTTP OPTIONS /api/dashboard/stats/ 200 [0.00, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:16,104 runserver 10224 9404 [32mHTTP GET /api/notifications 301 [0.60, 127.0.0.1:64615][0m
+INFO 2026-06-22 01:52:16,315 runserver 10224 9404 [mHTTP GET /api/dashboard/stats/ 200 [0.90, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:16,523 runserver 10224 9404 [mHTTP GET /api/dashboard/stats/ 200 [0.21, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:34,511 runserver 10224 9404 [mHTTP OPTIONS /api/emails/campaigns/ 200 [0.00, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:34,511 runserver 10224 9404 [mHTTP OPTIONS /api/emails/campaigns/ 200 [0.00, 127.0.0.1:50361][0m
+INFO 2026-06-22 01:52:34,856 runserver 10224 9404 [mHTTP GET /api/emails/campaigns/ 200 [0.34, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:35,058 runserver 10224 9404 [mHTTP GET /api/emails/campaigns/ 200 [0.20, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:39,177 runserver 10224 9404 [mHTTP GET /api/dashboard/stats/ 200 [0.22, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:39,393 runserver 10224 9404 [mHTTP GET /api/dashboard/stats/ 200 [0.21, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:55,838 runserver 10224 9404 [mHTTP GET /api/emails/campaigns/ 200 [0.21, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:56,080 runserver 10224 9404 [mHTTP GET /api/emails/campaigns/ 200 [0.24, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:58,377 runserver 10224 9404 [mHTTP OPTIONS /api/senders/ 200 [0.01, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:58,378 runserver 10224 9404 [mHTTP OPTIONS /api/senders/ 200 [0.01, 127.0.0.1:50361][0m
+INFO 2026-06-22 01:52:58,611 runserver 10224 9404 [mHTTP GET /api/senders/ 200 [0.23, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:52:58,831 runserver 10224 9404 [mHTTP GET /api/senders/ 200 [0.22, 127.0.0.1:59597][0m
+INFO 2026-06-22 01:55:37,516 runserver 10224 9404 [mHTTP GET /admin/ 200 [0.47, 127.0.0.1:53363][0m
+WARNING 2026-06-22 01:55:37,740 log 10224 11068 Not Found: /favicon.ico
+WARNING 2026-06-22 01:55:37,742 runserver 10224 9404 [33mHTTP GET /favicon.ico 404 [0.11, 127.0.0.1:53363][0m
+INFO 2026-06-22 01:58:54,015 autoreload 7236 1092 Watching for file changes with StatReloader
+INFO 2026-06-22 01:59:05,281 runserver 7236 7960 [32mHTTP GET /admin/ 302 [0.06, 127.0.0.1:58885][0m
+INFO 2026-06-22 01:59:05,356 runserver 7236 7960 [mHTTP GET /admin/login/?next=/admin/ 200 [0.07, 127.0.0.1:58885][0m
+INFO 2026-06-22 01:59:05,474 runserver 7236 7960 [mHTTP GET /static/admin/css/base.css 200 [0.11, 127.0.0.1:58885][0m
+INFO 2026-06-22 01:59:05,475 runserver 7236 7960 [mHTTP GET /static/admin/css/dark_mode.css 200 [0.10, 127.0.0.1:55054][0m
+INFO 2026-06-22 01:59:05,482 runserver 7236 7960 [mHTTP GET /static/admin/css/login.css 200 [0.00, 127.0.0.1:58885][0m
+INFO 2026-06-22 01:59:05,482 runserver 7236 7960 [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.01, 127.0.0.1:56237][0m
+INFO 2026-06-22 01:59:05,484 runserver 7236 7960 [mHTTP GET /static/admin/css/responsive.css 200 [0.01, 127.0.0.1:55054][0m
+INFO 2026-06-22 01:59:05,488 runserver 7236 7960 [mHTTP GET /static/admin/js/theme.js 200 [0.00, 127.0.0.1:56237][0m
+INFO 2026-06-22 01:59:05,489 runserver 7236 7960 [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:58885][0m
+INFO 2026-06-22 01:59:21,020 runserver 7236 7960 [32mHTTP POST /admin/login/?next=/admin/ 302 [1.00, 127.0.0.1:58885][0m
+INFO 2026-06-22 01:59:21,127 runserver 7236 7960 [mHTTP GET /admin/ 200 [0.10, 127.0.0.1:58885][0m
+INFO 2026-06-22 01:59:21,154 runserver 7236 7960 [mHTTP GET /static/admin/css/dashboard.css 200 [0.00, 127.0.0.1:58885][0m
+INFO 2026-06-22 01:59:21,187 runserver 7236 7960 [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.03, 127.0.0.1:56237][0m
+INFO 2026-06-22 01:59:21,188 runserver 7236 7960 [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.03, 127.0.0.1:55054][0m
+INFO 2026-06-22 02:00:18,648 autoreload 6904 9812 Watching for file changes with StatReloader
+INFO 2026-06-22 02:06:23,111 autoreload 8272 13156 Watching for file changes with StatReloader
+INFO 2026-06-22 02:06:29,973 runserver 8272 5516 [mHTTP GET /admin/ 200 [0.15, 127.0.0.1:61885][0m
+INFO 2026-06-22 02:06:58,956 runserver 8272 5516 [32mHTTP GET /rosetta/ 302 [0.10, 127.0.0.1:61885][0m
+INFO 2026-06-22 02:06:59,082 runserver 8272 5516 [mHTTP GET /rosetta/files/project/ 200 [0.12, 127.0.0.1:61885][0m
+INFO 2026-06-22 02:06:59,242 runserver 8272 5516 [mHTTP GET /static/admin/rosetta/css/rosetta.css 200 [0.13, 127.0.0.1:56918][0m
+INFO 2026-06-22 02:06:59,250 runserver 8272 5516 [mHTTP GET /static/admin/rosetta/js/rosetta.js 200 [0.00, 127.0.0.1:56918][0m
+INFO 2026-06-22 02:06:59,262 runserver 8272 5516 [mHTTP GET /static/admin/css/forms.css 200 [0.15, 127.0.0.1:61885][0m
+INFO 2026-06-22 02:06:59,271 runserver 8272 5516 [mHTTP GET /static/admin/css/changelists.css 200 [0.16, 127.0.0.1:63840][0m
+INFO 2026-06-22 02:06:59,273 runserver 8272 5516 [mHTTP GET /static/admin/css/widgets.css 200 [0.01, 127.0.0.1:61885][0m
+INFO 2026-06-22 02:17:42,391 autoreload 12088 10692 Watching for file changes with StatReloader
+INFO 2026-06-22 02:18:07,552 runserver 12088 1048 [mHTTP OPTIONS /api/auth/login/ 200 [0.01, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:08,346 runserver 12088 1048 [mHTTP POST /api/auth/login/ 200 [0.79, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:09,692 runserver 12088 1048 [mHTTP OPTIONS /api/dashboard/stats/ 200 [0.00, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:09,693 runserver 12088 1048 [mHTTP OPTIONS /api/dashboard/stats/ 200 [0.00, 127.0.0.1:64356][0m
+INFO 2026-06-22 02:18:10,203 runserver 12088 1048 [mHTTP GET /api/dashboard/stats/ 200 [0.51, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:10,477 runserver 12088 1048 [32mHTTP GET /api/notifications 301 [0.76, 127.0.0.1:65498][0m
+INFO 2026-06-22 02:18:10,721 runserver 12088 1048 [mHTTP GET /api/dashboard/stats/ 200 [0.52, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:16,972 runserver 12088 1048 [mHTTP OPTIONS /api/emails/campaigns/ 200 [0.00, 127.0.0.1:64356][0m
+INFO 2026-06-22 02:18:16,972 runserver 12088 1048 [mHTTP OPTIONS /api/emails/campaigns/ 200 [0.01, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:17,189 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.21, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:17,421 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:27,636 runserver 12088 1048 [mHTTP OPTIONS /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.00, 127.0.0.1:64356][0m
+INFO 2026-06-22 02:18:27,637 runserver 12088 1048 [mHTTP OPTIONS /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.01, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:27,996 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.35, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:28,218 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.22, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:33,399 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.28, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:33,637 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.23, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:35,477 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.20, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:35,750 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.27, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:37,862 runserver 12088 1048 [mHTTP OPTIONS /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/send/ 200 [0.00, 127.0.0.1:61427][0m
+WARNING 2026-06-22 02:18:38,083 log 12088 13036 Bad Request: /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/send/
+WARNING 2026-06-22 02:18:38,083 runserver 12088 1048 [31;1mHTTP POST /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/send/ 400 [0.22, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:41,115 runserver 12088 1048 [mHTTP OPTIONS /api/senders/ 200 [0.00, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:41,125 runserver 12088 1048 [mHTTP OPTIONS /api/senders/ 200 [0.01, 127.0.0.1:64356][0m
+INFO 2026-06-22 02:18:41,767 runserver 12088 1048 [mHTTP GET /api/senders/ 200 [0.65, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:42,014 runserver 12088 1048 [mHTTP GET /api/senders/ 200 [0.24, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:43,637 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.22, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:43,851 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.21, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:56,519 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.25, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:18:56,737 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.21, 127.0.0.1:61427][0m
+INFO 2026-06-22 02:22:20,879 runserver 12088 1048 [mHTTP OPTIONS /api/auth/profile/ 200 [0.01, 127.0.0.1:52484][0m
+INFO 2026-06-22 02:22:20,880 runserver 12088 1048 [mHTTP OPTIONS /api/auth/profile/ 200 [0.01, 127.0.0.1:57840][0m
+INFO 2026-06-22 02:22:21,298 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.42, 127.0.0.1:64484][0m
+INFO 2026-06-22 02:22:21,532 runserver 12088 1048 [mHTTP GET /api/auth/profile/ 200 [0.64, 127.0.0.1:57840][0m
+INFO 2026-06-22 02:22:21,782 runserver 12088 1048 [mHTTP GET /api/auth/profile/ 200 [0.25, 127.0.0.1:57840][0m
+INFO 2026-06-22 02:22:22,018 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.72, 127.0.0.1:64484][0m
+INFO 2026-06-22 02:24:34,874 runserver 12088 1048 [mHTTP POST /api/emails/campaigns/ 201 [0.47, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:35,198 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.28, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:35,438 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.24, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:42,090 runserver 12088 1048 [mHTTP OPTIONS /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.01, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:42,097 runserver 12088 1048 [mHTTP OPTIONS /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.02, 127.0.0.1:53289][0m
+INFO 2026-06-22 02:24:42,347 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.25, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:42,571 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.22, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:46,884 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.26, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:47,116 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.23, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:50,317 runserver 12088 1048 [mHTTP GET /api/senders/ 200 [0.25, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:50,551 runserver 12088 1048 [mHTTP GET /api/senders/ 200 [0.23, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:55,059 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.24, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:55,292 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:51289][0m
+INFO 2026-06-22 02:24:58,989 runserver 12088 1048 [mHTTP OPTIONS /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/send/ 200 [0.01, 127.0.0.1:51289][0m
+WARNING 2026-06-22 02:25:16,378 log 12088 13036 Bad Request: /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/send/
+WARNING 2026-06-22 02:25:16,379 runserver 12088 1048 [31;1mHTTP POST /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/send/ 400 [0.23, 127.0.0.1:53289][0m
+INFO 2026-06-22 02:28:15,219 runserver 12088 1048 [mHTTP GET /api/auth/profile/ 200 [0.56, 127.0.0.1:65301][0m
+INFO 2026-06-22 02:28:15,476 runserver 12088 1048 [mHTTP GET /api/auth/profile/ 200 [0.25, 127.0.0.1:65301][0m
+INFO 2026-06-22 02:28:15,699 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [1.04, 127.0.0.1:53479][0m
+INFO 2026-06-22 02:28:15,973 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.27, 127.0.0.1:53479][0m
+INFO 2026-06-22 02:28:20,124 runserver 12088 1048 [mHTTP OPTIONS /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/pause/ 200 [0.00, 127.0.0.1:53479][0m
+INFO 2026-06-22 02:28:20,460 runserver 12088 1048 [mHTTP POST /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/pause/ 200 [0.33, 127.0.0.1:53479][0m
+INFO 2026-06-22 02:28:20,694 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:53479][0m
+INFO 2026-06-22 02:28:26,373 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.24, 127.0.0.1:53479][0m
+INFO 2026-06-22 02:28:34,920 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.21, 127.0.0.1:65301][0m
+WARNING 2026-06-22 02:28:36,162 log 12088 13036 Bad Request: /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/send/
+WARNING 2026-06-22 02:28:36,163 runserver 12088 1048 [31;1mHTTP POST /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/send/ 400 [0.24, 127.0.0.1:65301][0m
+INFO 2026-06-22 02:28:42,196 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.57, 127.0.0.1:65301][0m
+INFO 2026-06-22 02:28:42,417 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.22, 127.0.0.1:65301][0m
+INFO 2026-06-22 02:28:59,862 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.22, 127.0.0.1:65301][0m
+INFO 2026-06-22 02:29:00,103 runserver 12088 1048 [mHTTP GET /api/emails/campaigns/ 200 [0.24, 127.0.0.1:65301][0m
+INFO 2026-06-22 02:33:51,306 autoreload 4612 10224 Watching for file changes with StatReloader
+INFO 2026-06-22 02:34:02,868 runserver 4612 7948 [mHTTP GET /api/auth/profile/ 200 [0.27, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:34:03,114 runserver 4612 7948 [mHTTP GET /api/emails/campaigns/ 200 [0.51, 127.0.0.1:61878][0m
+INFO 2026-06-22 02:34:03,346 runserver 4612 7948 [mHTTP GET /api/auth/profile/ 200 [0.47, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:34:03,572 runserver 4612 7948 [mHTTP GET /api/emails/campaigns/ 200 [0.46, 127.0.0.1:61878][0m
+INFO 2026-06-22 02:34:05,927 runserver 4612 7948 [mHTTP POST /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/pause/ 200 [0.34, 127.0.0.1:61878][0m
+INFO 2026-06-22 02:34:06,171 runserver 4612 7948 [mHTTP GET /api/emails/campaigns/ 200 [0.24, 127.0.0.1:61878][0m
+INFO 2026-06-22 02:34:11,708 runserver 4612 7948 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.22, 127.0.0.1:61878][0m
+INFO 2026-06-22 02:34:18,730 runserver 4612 7948 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.44, 127.0.0.1:64815][0m
+WARNING 2026-06-22 02:34:20,114 log 4612 9984 Bad Request: /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/send/
+WARNING 2026-06-22 02:34:20,116 runserver 4612 7948 [31;1mHTTP POST /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/send/ 400 [0.22, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:34:25,018 runserver 4612 7948 [mHTTP GET /api/senders/ 200 [0.23, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:34:25,434 runserver 4612 7948 [mHTTP GET /api/senders/ 200 [0.41, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:34:32,811 runserver 4612 7948 [mHTTP GET /api/dashboard/stats/ 200 [0.25, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:34:33,050 runserver 4612 7948 [mHTTP GET /api/dashboard/stats/ 200 [0.23, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:34:40,817 runserver 4612 7948 [mHTTP GET /api/dashboard/stats/ 200 [0.25, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:34:41,078 runserver 4612 7948 [mHTTP GET /api/dashboard/stats/ 200 [0.26, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:34:43,413 runserver 4612 7948 [mHTTP GET /api/emails/campaigns/ 200 [0.25, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:34:43,680 runserver 4612 7948 [mHTTP GET /api/emails/campaigns/ 200 [0.26, 127.0.0.1:64815][0m
+INFO 2026-06-22 02:36:49,365 runserver 4612 7948 [mHTTP GET /api/auth/profile/ 200 [0.49, 127.0.0.1:58702][0m
+INFO 2026-06-22 02:36:49,595 runserver 4612 7948 [mHTTP GET /api/auth/profile/ 200 [0.72, 127.0.0.1:64396][0m
+INFO 2026-06-22 02:41:33,671 autoreload 10860 12680 Watching for file changes with StatReloader
+INFO 2026-06-22 02:41:48,645 runserver 10860 5592 [32mHTTP GET /admin/ 302 [0.04, 127.0.0.1:52602][0m
+INFO 2026-06-22 02:41:48,686 runserver 10860 5592 [mHTTP GET /admin/login/?next=/admin/ 200 [0.04, 127.0.0.1:52602][0m
+WARNING 2026-06-22 02:41:50,739 log 10860 1896 Method Not Allowed: /api/auth/login/
+WARNING 2026-06-22 02:41:50,740 runserver 10860 5592 [31;1mHTTP GET /api/auth/login/ 405 [0.00, 127.0.0.1:52606][0m
+INFO 2026-06-22 02:41:57,698 runserver 10860 5592 [mHTTP POST /api/auth/login/ 200 [0.83, 127.0.0.1:55182][0m
+WARNING 2026-06-22 02:41:58,033 log 10860 1896 Unauthorized: /api/auth/login/
+WARNING 2026-06-22 02:41:58,034 runserver 10860 5592 [31;1mHTTP POST /api/auth/login/ 401 [1.07, 127.0.0.1:55185][0m
+INFO 2026-06-22 02:41:58,862 runserver 10860 5592 [mHTTP GET /api/dashboard/stats/ 200 [0.26, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:41:59,131 runserver 10860 5592 [mHTTP GET /api/dashboard/stats/ 200 [0.26, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:42:14,037 runserver 10860 5592 [mHTTP GET /api/emails/campaigns/ 200 [0.27, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:42:14,301 runserver 10860 5592 [mHTTP GET /api/emails/campaigns/ 200 [0.26, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:42:17,526 runserver 10860 5592 [mHTTP GET /api/senders/ 200 [0.25, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:42:17,775 runserver 10860 5592 [mHTTP GET /api/senders/ 200 [0.24, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:42:49,892 runserver 10860 5592 [mHTTP GET /api/emails/campaigns/ 200 [0.26, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:42:50,123 runserver 10860 5592 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:42:53,428 runserver 10860 5592 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.24, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:42:53,672 runserver 10860 5592 [mHTTP GET /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 200 [0.24, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:42:57,822 runserver 10860 5592 [mHTTP GET /api/emails/campaigns/ 200 [0.24, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:42:58,055 runserver 10860 5592 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:55182][0m
+INFO 2026-06-22 02:45:15,977 autoreload 4996 3828 Watching for file changes with StatReloader
+INFO 2026-06-22 02:45:28,971 runserver 4996 1500 [mHTTP GET /api/auth/profile/ 200 [0.23, 127.0.0.1:52582][0m
+INFO 2026-06-22 02:45:29,187 runserver 4996 1500 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:52582][0m
+INFO 2026-06-22 02:45:29,436 runserver 4996 1500 [mHTTP GET /api/emails/campaigns/ 200 [0.68, 127.0.0.1:53730][0m
+INFO 2026-06-22 02:45:29,678 runserver 4996 1500 [mHTTP GET /api/emails/campaigns/ 200 [0.24, 127.0.0.1:53730][0m
+INFO 2026-06-22 02:46:10,665 runserver 4996 1500 [mHTTP POST /api/emails/campaigns/ 201 [0.45, 127.0.0.1:53730][0m
+INFO 2026-06-22 02:46:10,928 runserver 4996 1500 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:53730][0m
+INFO 2026-06-22 02:46:11,144 runserver 4996 1500 [mHTTP GET /api/emails/campaigns/ 200 [0.21, 127.0.0.1:53730][0m
+INFO 2026-06-22 02:46:16,669 runserver 4996 1500 [mHTTP OPTIONS /api/emails/campaigns/92bf1fdd-ca25-4c55-930b-3e104cd0d802/ 200 [0.00, 127.0.0.1:53730][0m
+INFO 2026-06-22 02:46:16,898 runserver 4996 1500 [mHTTP GET /api/emails/campaigns/92bf1fdd-ca25-4c55-930b-3e104cd0d802/ 200 [0.23, 127.0.0.1:53730][0m
+INFO 2026-06-22 02:46:22,653 runserver 4996 1500 [mHTTP GET /api/emails/campaigns/92bf1fdd-ca25-4c55-930b-3e104cd0d802/ 200 [0.22, 127.0.0.1:53730][0m
+INFO 2026-06-22 02:46:22,915 runserver 4996 1500 [mHTTP GET /api/emails/campaigns/92bf1fdd-ca25-4c55-930b-3e104cd0d802/ 200 [0.26, 127.0.0.1:53730][0m
+INFO 2026-06-22 02:51:54,522 autoreload 5668 10660 Watching for file changes with StatReloader
+INFO 2026-06-22 02:51:59,801 runserver 5668 3864 [mHTTP GET /api/auth/profile/ 200 [0.28, 127.0.0.1:53567][0m
+INFO 2026-06-22 02:52:00,092 runserver 5668 3864 [mHTTP GET /api/auth/profile/ 200 [0.29, 127.0.0.1:53567][0m
+INFO 2026-06-22 02:52:00,416 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/92bf1fdd-ca25-4c55-930b-3e104cd0d802/ 200 [0.23, 127.0.0.1:53567][0m
+INFO 2026-06-22 02:52:05,519 runserver 5668 3864 [mHTTP GET /api/auth/profile/ 200 [0.31, 127.0.0.1:53567][0m
+INFO 2026-06-22 02:52:05,752 runserver 5668 3864 [mHTTP GET /api/auth/profile/ 200 [0.23, 127.0.0.1:53567][0m
+INFO 2026-06-22 02:52:05,978 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/92bf1fdd-ca25-4c55-930b-3e104cd0d802/ 200 [0.74, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:15,472 runserver 5668 3864 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:15,693 runserver 5668 3864 [mHTTP GET /api/auth/profile/ 200 [0.22, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:16,178 runserver 5668 3864 [mHTTP GET /api/dashboard/stats/ 200 [0.30, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:16,402 runserver 5668 3864 [mHTTP GET /api/dashboard/stats/ 200 [0.22, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:21,061 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/ 200 [0.25, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:21,294 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:27,498 runserver 5668 3864 [mHTTP DELETE /api/emails/campaigns/92bf1fdd-ca25-4c55-930b-3e104cd0d802/ 204 [0.30, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:27,709 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/ 200 [0.21, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:29,503 runserver 5668 3864 [mHTTP DELETE /api/emails/campaigns/e1bf38dc-d74e-488a-9738-ca487fcaeb6d/ 204 [0.34, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:29,786 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/ 200 [0.28, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:33,458 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.23, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:33,682 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.22, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:57,967 runserver 5668 3864 [mHTTP PUT /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.45, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:58,748 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.27, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:52:58,949 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.20, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:53:04,002 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/ 200 [0.22, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:53:04,218 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/ 200 [0.21, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:53:05,709 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.22, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:53:10,267 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.24, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:53:10,496 runserver 5668 3864 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.22, 127.0.0.1:63523][0m
+INFO 2026-06-22 02:55:20,433 autoreload 2636 3752 Watching for file changes with StatReloader
+INFO 2026-06-22 02:55:29,346 runserver 2636 7424 [mHTTP GET /api/auth/profile/ 200 [0.24, 127.0.0.1:51305][0m
+INFO 2026-06-22 02:55:29,608 runserver 2636 7424 [mHTTP GET /api/auth/profile/ 200 [0.26, 127.0.0.1:51305][0m
+INFO 2026-06-22 02:55:29,841 runserver 2636 7424 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.70, 127.0.0.1:56171][0m
+INFO 2026-06-22 02:55:33,745 runserver 2636 7424 [mHTTP PUT /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.60, 127.0.0.1:56171][0m
+INFO 2026-06-22 02:55:34,228 runserver 2636 7424 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.25, 127.0.0.1:56171][0m
+INFO 2026-06-22 02:55:34,468 runserver 2636 7424 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.24, 127.0.0.1:56171][0m
+INFO 2026-06-22 02:55:37,372 runserver 2636 7424 [mHTTP GET /api/emails/campaigns/ 200 [0.24, 127.0.0.1:56171][0m
+INFO 2026-06-22 02:55:37,607 runserver 2636 7424 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:56171][0m
+INFO 2026-06-22 02:55:39,670 runserver 2636 7424 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.20, 127.0.0.1:56171][0m
+INFO 2026-06-22 02:55:39,887 runserver 2636 7424 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.21, 127.0.0.1:56171][0m
+INFO 2026-06-22 02:56:10,933 runserver 2636 7424 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.23, 127.0.0.1:51305][0m
+INFO 2026-06-22 02:56:11,221 runserver 2636 7424 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.28, 127.0.0.1:51305][0m
+INFO 2026-06-22 02:59:48,174 autoreload 6584 3548 Watching for file changes with StatReloader
+INFO 2026-06-22 03:00:01,856 runserver 6584 8708 [mHTTP GET /api/auth/profile/ 200 [0.26, 127.0.0.1:64580][0m
+INFO 2026-06-22 03:00:02,071 runserver 6584 8708 [mHTTP GET /api/auth/profile/ 200 [0.21, 127.0.0.1:64580][0m
+INFO 2026-06-22 03:00:02,312 runserver 6584 8708 [mHTTP GET /api/emails/campaigns/ 200 [0.72, 127.0.0.1:63138][0m
+INFO 2026-06-22 03:00:02,541 runserver 6584 8708 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:63138][0m
+INFO 2026-06-22 03:00:09,713 runserver 6584 8708 [mHTTP GET /api/dashboard/stats/ 200 [0.24, 127.0.0.1:63138][0m
+INFO 2026-06-22 03:00:09,958 runserver 6584 8708 [mHTTP GET /api/dashboard/stats/ 200 [0.24, 127.0.0.1:63138][0m
+INFO 2026-06-22 03:00:14,368 runserver 6584 8708 [mHTTP GET /api/emails/campaigns/ 200 [0.23, 127.0.0.1:63138][0m
+INFO 2026-06-22 03:00:14,684 runserver 6584 8708 [mHTTP GET /api/emails/campaigns/ 200 [0.31, 127.0.0.1:63138][0m
+INFO 2026-06-22 03:00:16,474 runserver 6584 8708 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.23, 127.0.0.1:63138][0m
+INFO 2026-06-22 03:00:16,699 runserver 6584 8708 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.22, 127.0.0.1:63138][0m
+WARNING 2026-06-22 03:00:21,244 log 6584 13132 Bad Request: /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/send/
+WARNING 2026-06-22 03:00:21,245 runserver 6584 8708 [31;1mHTTP POST /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/send/ 400 [0.20, 127.0.0.1:63138][0m
+INFO 2026-06-22 03:00:28,797 runserver 6584 8708 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.21, 127.0.0.1:63138][0m
+INFO 2026-06-22 03:00:29,052 runserver 6584 8708 [mHTTP GET /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/ 200 [0.24, 127.0.0.1:63138][0m
+WARNING 2026-06-22 03:00:30,027 log 6584 13132 Bad Request: /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/send/
+WARNING 2026-06-22 03:00:30,027 runserver 6584 8708 [31;1mHTTP POST /api/emails/campaigns/b5f814d4-6595-476b-b787-90440d5efafd/send/ 400 [0.21, 127.0.0.1:63138][0m
+INFO 2026-06-22 15:02:08,197 autoreload 9468 8868 Watching for file changes with StatReloader
+INFO 2026-06-22 15:03:00,850 autoreload 5524 10344 Watching for file changes with StatReloader

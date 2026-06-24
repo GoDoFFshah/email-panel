@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Email Panel\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: Admin <admin@example.com>\n"
+"Language-Team: Persian\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Site administration"
+msgstr "مدیریت سایت"
+
+msgid "Welcome,"
+msgstr "خوش آمدید،"
+
+msgid "Change password"
+msgstr "تغییر رمز عبور"
+
+msgid "Log out"
+msgstr "خروج"
+
+msgid "Toggle theme (current theme: auto)"
+msgstr "تغییر تم (تم فعلی: خودکار)"
+
+msgid "View site"
+msgstr "مشاهده سایت"
+
+msgid "Accounts"
+msgstr "حساب‌های کاربری"
+
+msgid "Users"
+msgstr "کاربران"
+
+msgid "Add"
+msgstr "افزودن"
+
+msgid "Change"
+msgstr "تغییر"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Save"
+msgstr "ذخیره"
+
+msgid "Search"
+msgstr "جستجو"
+
+msgid "Filter"
+msgstr "فیلتر"
+
+msgid "Authentication and Authorization"
+msgstr "احراز هویت و مجوزها"
+
+msgid "Groups"
+msgstr "گروه‌ها"
+
+msgid "Axes"
+msgstr "امنیت"
+
+msgid "Recent actions"
+msgstr "فعالیت‌های اخیر"
+
+msgid "My actions"
+msgstr "فعالیت‌های من"
+
+msgid "None available"
+msgstr "هیچ فعالیتی موجود نیست"
+
+msgid "Are you sure?"
+msgstr "آیا مطمئن هستید؟"
+
+msgid "Yes, I'm sure"
+msgstr "بله، مطمئنم"
+
+msgid "No, take me back"
+msgstr "خیر، برگرد"
